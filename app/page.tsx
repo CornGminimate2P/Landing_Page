@@ -45,7 +45,7 @@ export default function Home() {
 
 					<div className="p-12 rounded-2xl max-w-4xl mx-auto backdrop-blur-md bg-white/5 border border-white/10">
 						<p className="text-2xl italic mb-6 text-gray-200 leading-relaxed">
-							"AI จะช่วยกำจัดงานที่น่าเบื่อจากงานประจำของคุณ เพื่อให้คุณมีเวลาสร้างสรรค์มากขึ้น"
+							&quot;AI จะช่วยกำจัดงานที่น่าเบื่อจากงานประจำของคุณ เพื่อให้คุณมีเวลาสร้างสรรค์มากขึ้น&quot;
 						</p>
 						<div className="flex items-center justify-center gap-4">
 							<span className="text-gray-300">Satya Nadella</span>
@@ -81,8 +81,8 @@ export default function Home() {
 						<div className="p-8 rounded-2xl backdrop-blur-md bg-white/5 border border-white/10">
 							<h3 className="text-2xl mb-6 text-white">เป้าหมายของยุทธศาสตร์นี้</h3>
 							<ul className="space-y-3 text-gray-300 leading-relaxed">
-								<li>• ลดเวลางาน "Noise" อย่างน้อย 30%</li>
-								<li>• เพิ่มเวลาให้พนักงานโฟกัส "Craft"</li>
+								<li>• ลดเวลางาน &quot;Noise&quot; อย่างน้อย 30%</li>
+								<li>• เพิ่มเวลาให้พนักงานโฟกัส &quot;Craft&quot;</li>
 								<li>• ทำให้การใช้ AI มีทิศทางและได้รับความร่วมมือจากทุกฝ่าย</li>
 							</ul>
 						</div>
