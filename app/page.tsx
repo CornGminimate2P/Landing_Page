@@ -1,23 +1,9 @@
 'use client'
+import Image from 'next/image'
 
 export default function Home() {
 	return (
 		<main className="min-h-screen bg-[#0a1628]">
-			{/* Navigation Bar */}
-			<nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-[#0a1628]/95 to-[#1a237e]/95 backdrop-blur-md border-b border-white/10">
-				<div className="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
-					<div className="flex items-center gap-8">
-						<span className="text-white/90 font-light text-sm tracking-wider">HOME</span>
-						<div className="flex gap-3">
-							<span className="bg-white/10 backdrop-blur text-white/80 px-5 py-1.5 rounded-full text-sm font-light border border-white/20 hover:bg-white/20 transition-colors">Courses</span>
-							<span className="bg-white/10 backdrop-blur text-white/80 px-5 py-1.5 rounded-full text-sm font-light border border-white/20 hover:bg-white/20 transition-colors">Leaderboard</span>
-							<span className="bg-white/10 backdrop-blur text-white/80 px-5 py-1.5 rounded-full text-sm font-light border border-white/20 hover:bg-white/20 transition-colors">Community</span>
-						</div>
-					</div>
-					<div className="w-10 h-10 bg-gradient-to-br from-[#ba68c8] to-[#ec407a] rounded-full shadow-lg shadow-purple-500/30"></div>
-				</div>
-			</nav>
-
 			{/* Hero Section with Satya Quote */}
 			<section
 				className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20"
@@ -33,28 +19,116 @@ export default function Home() {
 					}}
 				/>
 
-				<div className="max-w-6xl mx-auto px-5 text-center relative z-10">
-					<h2 className="text-5xl md:text-7xl font-extrabold text-[#ffd54f] mb-12 tracking-wide uppercase">
+				{/* Left Person Image - ขยับขึ้นด้านบน */}
+				<div
+					className="absolute bottom-0 h-[60vh] md:h-[45vh] z-30"
+					style={{
+						left: '50%',
+						transform: 'translateX(-50%) translateX(-530px)'
+					}}
+				>
+					<Image
+						src="/suthee.png"
+						alt="Suthee Mongkolsuthee"
+						width={400}
+						height={600}
+						style={{
+							width: 'auto',
+							height: '100%',
+							objectFit: 'contain'
+						}}
+						priority
+					/>
+				</div>
+
+				{/* Right Person Image (Satya) - ขยับขึ้นด้านบน */}
+				<div
+					className="absolute bottom-0 h-[60vh] md:h-[46vh] z-30"
+					style={{
+						left: '50%',
+						transform: 'translateX(-50%) translateX(610px)'
+					}}
+				>
+					<Image
+						src="/satya.png"
+						alt="Satya Nadella"
+						width={400}
+						height={600}
+						style={{
+							width: 'auto',
+							height: '100%',
+							objectFit: 'contain'
+						}}
+						priority
+					/>
+				</div>
+
+				<div className="max-w-6xl mx-auto px-5 text-center relative z-20">
+					<h2 className="text-5xl md:text-7xl font-black mb-12 tracking-wide uppercase animate-gradient bg-gradient-to-r from-[#ffd54f] via-[#ff9800] to-[#ffd54f] bg-[length:200%_auto] text-transparent bg-clip-text">
 						AI BOOTCAMP 2025
 					</h2>
 
+					<style jsx>{`
+						@keyframes gradient {
+							0% { background-position: 0% 50%; }
+							50% { background-position: 100% 50%; }
+							100% { background-position: 0% 50%; }
+						}
+
+						.animate-gradient {
+							animation: gradient 3s ease infinite;
+						}
+					`}</style>
+
 					<h1 className="text-5xl md:text-5xl font-light mb-8 leading-tight text-white">
-						AI will remove the <span className="text-[#64b5f6]">drudgery</span> from your daily work<br />
-						so you can be more <span className="text-[#ba68c8]">creative</span>
+						Unlock what&apos;s <span className="text-[#64b5f6]">possible </span>with the
+						<span className="text-[#ba68c8]"> power </span>of AI
 					</h1>
 
-					<div className="p-12 rounded-2xl max-w-4xl mx-auto backdrop-blur-md bg-white/5 border border-white/10">
-						<p className="text-2xl italic mb-6 text-gray-200 leading-relaxed">
-							&quot;AI จะช่วยกำจัดงานที่น่าเบื่อจากงานประจำของคุณ เพื่อให้คุณมีเวลาสร้างสรรค์มากขึ้น&quot;
-						</p>
-						<div className="flex items-center justify-center gap-4">
-							<span className="text-gray-300">Satya Nadella</span>
-							<span className="text-gray-500">CEO of Microsoft</span>
-							<div className="flex gap-0.5">
-								<div className="w-6 h-6 bg-[#f25022]"></div>
-								<div className="w-6 h-6 bg-[#7fba00]"></div>
-								<div className="w-6 h-6 bg-[#00a4ef]"></div>
-								<div className="w-6 h-6 bg-[#ffb900]"></div>
+					{/* Quote Cards Container */}
+					<div className="flex gap-8 justify-between items-start max-w-7xl mx-auto">
+						{/* Left Quote - Suthee */}
+						<div className="flex-1 p-8 rounded-2xl backdrop-blur-md bg-white/5 border border-white/10">
+							<div className="text-center">
+								<p className="text-lg italic text-gray-200 leading-relaxed">
+									&quot;ทุกวันนี้ AI เข้ามามีบทบาทในทุก ๆ ส่วนทั้งภาคเอกชนและภาครัฐอยู่ที่ว่าเราจะนำความสามารถไปใช้ในเรื่องอะไร และสิ่งสำคัญที่สุดคือ Data ถ้าไม่มี Data ก็ไปต่อไม่ได้&quot;
+								</p>
+								<p className="text-l text-gray-500 leading-relaxed mb-4">
+									&quot;บทสัมภาษณ์กับสื่อ Top News และ อมรินทร์&quot;
+								</p>
+								<div className="flex items-center justify-center gap-4">
+									<span className="text-gray-300 font-medium">คุณสุพันธุ์ มงคลสุธี</span>
+									<span className="text-gray-500 text-sm">CEO of T.K.S. Technologies PCL.</span>
+									<Image
+										src="/tks-logo.png"
+										alt="Microsoft"
+										width={48.5}
+										height={17}
+										className="inline-block"
+										style={{ objectFit: 'contain' }}
+									/>
+								</div>
+							</div>
+						</div>
+
+						{/* Right Quote - Satya */}
+						<div className="flex-1 p-8 rounded-2xl backdrop-blur-md bg-white/5 border border-white/10">
+							<div className="text-center">
+								<p className="text-xl italic text-gray-200 leading-relaxed mb-6">
+									&quot;AI จะช่วยกำจัดงานที่น่าเบื่อจากงานประจำของคุณ เพื่อให้คุณมีเวลาสร้างสรรค์มากขึ้น&quot;
+								</p>
+								<div className="flex items-center justify-center gap-2">
+									<span className="text-gray-300 font-medium">Satya Nadella</span>
+									<span className="text-gray-500 text-sm">CEO of Microsoft</span>
+									<Image
+										src="/microsoft-logo.png"
+										alt="Microsoft"
+										width={48.5}
+										height={17}
+										className="inline-block"
+										style={{ objectFit: 'contain' }}
+									/>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -153,6 +227,11 @@ export default function Home() {
 									<span className="text-[#66bb6a]">Craft</span>
 								</div>
 								<div className="h-1 rounded bg-gradient-to-r from-[#ffa726] to-[#66bb6a]"></div>
+								{/* เพิ่มตัวเลข */}
+								<div className="flex justify-between mt-2">
+									<span className="text-xs text-gray-400 bg-white/10 rounded-full w-5 h-5 flex items-center justify-center">1</span>
+									<span className="text-xs text-gray-400 bg-white/10 rounded-full w-5 h-5 flex items-center justify-center">3</span>
+								</div>
 							</div>
 						</div>
 
@@ -167,6 +246,11 @@ export default function Home() {
 									<span className="text-[#ffa726]">Noise</span>
 								</div>
 								<div className="h-1 rounded bg-gradient-to-r from-[#66bb6a] to-[#ffa726]"></div>
+								{/* เพิ่มตัวเลข */}
+								<div className="flex justify-between mt-2">
+									<span className="text-xs text-gray-400 bg-white/10 rounded-full w-5 h-5 flex items-center justify-center">1</span>
+									<span className="text-xs text-gray-400 bg-white/10 rounded-full w-5 h-5 flex items-center justify-center">3</span>
+								</div>
 							</div>
 						</div>
 
@@ -181,6 +265,11 @@ export default function Home() {
 									<span className="text-[#66bb6a]">Craft</span>
 								</div>
 								<div className="h-1 rounded bg-gradient-to-r from-[#ffa726] to-[#66bb6a]"></div>
+								{/* เพิ่มตัวเลข */}
+								<div className="flex justify-between mt-2">
+									<span className="text-xs text-gray-400 bg-white/10 rounded-full w-5 h-5 flex items-center justify-center">1</span>
+									<span className="text-xs text-gray-400 bg-white/10 rounded-full w-5 h-5 flex items-center justify-center">3</span>
+								</div>
 							</div>
 						</div>
 					</div>
