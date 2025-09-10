@@ -3,7 +3,10 @@ import Image from 'next/image'
 import { useState } from 'react'
 
 export default function Home() {
-	const [currentTeamIndex, setCurrentTeamIndex] = useState(0)
+	const [currentTeam1, setCurrentTeam1] = useState(0)
+	const [currentTeam2, setCurrentTeam2] = useState(0)
+	const [currentTeam3, setCurrentTeam3] = useState(0)
+	const [currentTeam4, setCurrentTeam4] = useState(0)
 
 	return (
 		<main className="min-h-screen bg-[#0a1628]">
@@ -425,46 +428,46 @@ export default function Home() {
 			<section className="py-12 md:py-20 bg-gradient-to-b from-[#0a0e27] to-[#1a237e]">
 				<div className="max-w-8xl mx-auto px-4 md:px-5">
 					<h2 className="text-3xl sm:text-4xl md:text-5xl text-center mb-4 md:mb-6 font-bold text-white">
-						Team Participants
+						Our Instructors
 					</h2>
 
 					{/* Program Director */}
 					<h3 className="text-xl sm:text-2xl md:text-3xl text-center mb-8 md:mb-12 font-normal text-[#ffd54f]">
-						Mentors
+						Program Director
 					</h3>
 
 					<div className="flex justify-center mb-12 md:mb-16">
 						<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4 md:gap-6 max-w-8xl">
 							{[
-								{
-									name: "สายชล\nบัวบานศรี",
-									image: "/images/mentors/mentor-saichon.png",
-									role: "ผู้จัดการฝ่ายบริหารคลังสินค้าและจัดส่ง (M3)"
+								{ 
+									name: "Monchai\nLertsutthiwong", 
+									image: "/images/mentors/mentor-saichon.png", 
+									role: "Deputy Managing Director, KBTG" 
 								},
-								{
-									name: "สมเกียรติ\nสุกัญจนศิร",
-									image: "/images/mentors/mentor-somkiat.png",
-									role: "ผู้จัดการฝ่ายสำนักงาน (M3)"
+								{ 
+									name: "Theerat\nSakdejayont", 
+									image: "/images/mentors/mentor-somkiat.png", 
+									role: "Senior Research Engineer, KBTG" 
 								},
-								{
-									name: "ชัยยันต์\nบุญเจริญชัย",
-									image: "/images/mentors/mentor-chaiyan.png",
-									role: "ที่ปรึกษา (M3)"
+								{ 
+									name: "Theerat\nSakdejayont", 
+									image: "/images/mentors/mentor-chaiyan.png", 
+									role: "Senior Research Engineer, KBTG" 
 								},
-								{
-									name: "อาคเนย์\nเกตุกลิ่นแก้ว",
-									image: "/images/mentors/mentor-arkveld.png",
-									role: "ผู้จัดการฝ่ายเทคโนโลยีสารสนเทศ (M3)"
+								{ 
+									name: "Theerat\nSakdejayont", 
+									image: "/images/mentors/mentor-arkveld.png", 
+									role: "Senior Research Engineer, KBTG" 
 								},
-								{
-									name: "บุญเปรม\nสุขกสี",
-									image: "/images/mentors/mentor-bunprem.png",
-									role: "ผู้จัดการฝ่ายผลิต (M3)"
+								{ 
+									name: "Theerat\nSakdejayont", 
+									image: "/images/mentors/mentor-bunprem.png", 
+									role: "Senior Research Engineer, KBTG" 
 								},
-								{
-									name: "ธารทิพย์\nศรีงามผ่อง",
-									image: "/images/mentors/mentor-tarntip.png",
-									role: "ผู้จัดการฝ่ายบัญชีและการเงิน (M3)"
+								{ 
+									name: "Kirati\nThoednithi", 
+									image: "/images/mentors/mentor-tarntip.png", 
+									role: "Senior Data Scientist, KBTG" 
 								}
 							].map((director, i) => (
 								<div key={i} className="group">
@@ -479,10 +482,10 @@ export default function Home() {
 											<div className="absolute inset-0 bg-gradient-to-t from-[#1a1f2e] via-transparent to-transparent opacity-60"></div>
 										</div>
 										<div className="p-4">
-											<h4 className="text-sm md:text-xl font-medium text-white mb-1 whitespace-pre-line">
+											<h4 className="text-sm md:text-base font-medium text-white mb-1 whitespace-pre-line">
 												{director.name}
 											</h4>
-											<p className="text-[#66bb6a] text-xs md:text-lg mb-2">Mentor</p>
+											<p className="text-[#66bb6a] text-xs md:text-sm mb-2">Instructor</p>
 											<p className="text-gray-300 text-xs leading-relaxed">
 												{director.role}
 											</p>
@@ -493,49 +496,49 @@ export default function Home() {
 						</div>
 					</div>
 
-					{/* AI Fundamentals & Applications - All Teams */}
+					{/* AI Fundamentals & Applications - Section 1 */}
 					<h3 className="text-xl sm:text-2xl md:text-3xl text-center mb-8 md:mb-12 font-normal text-[#ffd54f]">
-						AI Challenger Teams
+						AI Fundamentals & Applications - Group 1
 					</h3>
 
-					{/* Teams Carousel Container */}
+					{/* Carousel Container 1 */}
 					<div className="relative overflow-hidden mb-16 md:mb-20">
 						<div
 							className="flex transition-transform duration-500 ease-in-out"
-							style={{ transform: `translateX(-${currentTeamIndex * 100}%)` }}
+							style={{ transform: `translateX(-${currentTeam1 * 100}%)` }}
 						>
 							{[
 								{
 									name: "The Giver",
 									color: "#64b5f6",
-									layout: "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 justify-items-center",
+									layout: "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 justify-items-center",
 									cardWidth: "w-48 md:w-52",
 									gap: "gap-4 md:gap-6",
 									members: [
-										{
-											name: "ชุตินันท์\nสุวรรณรักษา",
-											image: "/images/teams/the-giver/giver-chuti.png",
-											role: "เจ้าหน้าที่จัดซื้ออาวุโส (O2)"
+										{ 
+											name: "Person A", 
+											image: "/images/teams/the-giver/giver-chuti.png", 
+											role: "Team Lead" 
 										},
-										{
-											name: "ปณิตตา\nจิตร์อ่อง",
-											image: "/images/teams/the-giver/giver-panit.png",
-											role: " เจ้าหน้าที่จัดซื้ออาวุโส (O2)"
+										{ 
+											name: "Person B", 
+											image: "/images/teams/the-giver/giver-panit.png", 
+											role: "Senior Developer" 
 										},
-										{
-											name: "สิริวิมล\nยอดถา",
-											image: "/images/teams/the-giver/giver-siri.png",
-											role: "หัวหน้าแผนกจัดซื้อ (O3)"
+										{ 
+											name: "Person C", 
+											image: "/images/teams/the-giver/giver-siri.png", 
+											role: "Product Manager" 
 										},
-										{
-											name: "สิทธิชัย\nทางสวาย",
-											image: "/images/teams/the-giver/giver-sitthi.png",
-											role: "เจ้าหน้าที่จัดซื้ออาวุโส (O2)"
+										{ 
+											name: "Person D", 
+											image: "/images/teams/the-giver/giver-sitthi.png", 
+											role: "UX Designer" 
 										},
-										{
-											name: "สุดาพร\nสันประภา",
-											image: "/images/teams/the-giver/giver-suda.png",
-											role: "เจ้าหน้าที่จัดซื้อ (O1)"
+										{ 
+											name: "Person E", 
+											image: "/images/teams/the-giver/giver-suda.png", 
+											role: "Data Analyst" 
 										}
 									]
 								},
@@ -546,83 +549,164 @@ export default function Home() {
 									cardWidth: "w-48 md:w-52",
 									gap: "gap-4 md:gap-6",
 									members: [
-										{
-											name: "สุพิน\nเปกรัมย์",
-											image: "/images/teams/thinkup/up-supin.png",
-											role: "ผู้จัดการส่วน Preproduction (M2)"
+										{ 
+											name: "Person F", 
+											image: "/images/teams/thinkup/up-supin.png", 
+											role: "Product Manager" 
 										},
-										{
-											name: "กุลวดี\nแซ่โค้ว",
-											image: "/images/teams/thinkup/up-gulla.png",
-											role: "หัวหน้าแผนก Master Production planning (O3)"
+										{ 
+											name: "Person G", 
+											image: "/images/teams/thinkup/up-gulla.png", 
+											role: "UX Designer" 
 										},
-										{
-											name: "มานะ\nพันธุ์ดี",
-											image: "/images/teams/thinkup/up-mana.png",
-											role: "หัวหน้าส่วน AfterPress (M1)"
+										{ 
+											name: "Person H", 
+											image: "/images/teams/thinkup/up-mana.png", 
+											role: "Business Analyst" 
 										}
 									]
 								},
 								{
 									name: "AccNext",
 									color: "#4fc3f7",
-									layout: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 justify-items-center",
+									layout: "grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 justify-items-center",
 									cardWidth: "w-48 md:w-52",
 									gap: "gap-4 md:gap-6",
 									members: [
-										{
-											name: "กรองแก้ว\nวังแก้วหิรัญ",
-											image: "/images/teams/accnext/next-grong.png",
-											role: "หัวหน้าส่วนบัญชีต้นทุน (M1)"
+										{ 
+											name: "Person I", 
+											image: "/images/teams/accnext/next-grong.png", 
+											role: "Financial Analyst" 
 										},
-										{
-											name: "วีรยุทธ\nชาติทองคำ",
-											image: "/images/teams/accnext/next-wera.png",
-											role: "เจ้าหน้าที่คำนวณราคาอาวุโส (O2)"
+										{ 
+											name: "Person J", 
+											image: "/images/teams/accnext/next-wera.png", 
+											role: "Accounting Manager" 
 										},
-										{
-											name: "ทิวาพงศ์\nสุดสวาสดิ์",
-											image: "/images/teams/accnext/next-tiwa.png",
-											role: "หัวหน้าส่วนบัญชีทั่วไป (M1)"
+										{ 
+											name: "Person K", 
+											image: "/images/teams/accnext/next-tiwa.png", 
+											role: "Tax Specialist" 
 										},
-										{
-											name: "ทัศนีย์\nบรรณทิพย์",
-											image: "/images/teams/accnext/next-tussa.png",
-											role: "หัวหน้าแผนกบัญชีทั่วไป (O3)"
+										{ 
+											name: "Person L", 
+											image: "/images/teams/accnext/next-tussa.png", 
+											role: "Budget Analyst" 
 										},
-										{
-											name: "พิสมัย\nยิ้มจันทร์",
-											image: "/images/teams/accnext/next-pissa.png",
-											role: "เจ้าหน้าที่การเงินรับ-จ่าย (O1)"
+										{ 
+											name: "Person M", 
+											image: "/images/teams/accnext/next-pissa.png", 
+											role: "Finance Director" 
 										}
 									]
-								},
+								}
+							].map((team, teamIndex) => (
+								<div key={teamIndex} className="w-full flex-shrink-0">
+									<h4 className="text-lg md:text-xl text-center mb-6" style={{ color: team.color }}>
+										Team: {team.name}
+									</h4>
+									<div className="flex justify-center mb-12 md:mb-6">
+										<div className={`${team.layout} ${team.gap} max-w-6xl mx-auto`}>
+											{team.members.map((member, i) => (
+												<div key={i} className={`group ${team.cardWidth}`}>
+													<div className="relative rounded-2xl overflow-hidden bg-gradient-to-b from-[#2a2f3e] to-[#1a1f2e] border border-white/10 transition-transform duration-300 hover:scale-105">
+														<div className="aspect-[1/1] bg-gradient-to-b from-gray-600 to-gray-700 relative">
+															<Image
+																src={member.image}
+																alt={member.name.replace('\n', ' ')}
+																fill
+																className="object-cover"
+															/>
+															<div className="absolute inset-0 bg-gradient-to-t from-[#1a1f2e] via-transparent to-transparent opacity-60"></div>
+														</div>
+														<div className="p-4">
+															<h4 className="text-sm md:text-base font-medium text-white mb-1 whitespace-pre-line">
+																{member.name}
+															</h4>
+															<p className="text-xs md:text-sm mb-2" style={{ color: team.color }}>Instructor</p>
+															<p className="text-gray-300 text-xs leading-relaxed">
+																{member.role}
+															</p>
+														</div>
+													</div>
+												</div>
+											))}
+										</div>
+									</div>
+								</div>
+							))}
+						</div>
+
+						{/* Navigation Buttons for Group 1 */}
+						<div className="flex justify-center items-center gap-2 md:gap-4 mt-8 flex-wrap">
+							<button
+								onClick={() => setCurrentTeam1(0)}
+								className={`px-3 md:px-4 py-2 rounded-full text-xs md:text-sm transition-all ${currentTeam1 === 0
+									? 'bg-gradient-to-r from-[#64b5f6] to-[#42a5f5] text-white'
+									: 'bg-white/10 text-gray-400 hover:bg-white/20'
+									}`}
+							>
+								The Giver
+							</button>
+							<button
+								onClick={() => setCurrentTeam1(1)}
+								className={`px-3 md:px-4 py-2 rounded-full text-xs md:text-sm transition-all ${currentTeam1 === 1
+									? 'bg-gradient-to-r from-[#ba68c8] to-[#ab47bc] text-white'
+									: 'bg-white/10 text-gray-400 hover:bg-white/20'
+									}`}
+							>
+								ThinkUp
+							</button>
+							<button
+								onClick={() => setCurrentTeam1(2)}
+								className={`px-3 md:px-4 py-2 rounded-full text-xs md:text-sm transition-all ${currentTeam1 === 2
+									? 'bg-gradient-to-r from-[#4fc3f7] to-[#29b6f6] text-white'
+									: 'bg-white/10 text-gray-400 hover:bg-white/20'
+									}`}
+							>
+								AccNext
+							</button>
+						</div>
+					</div>
+
+					{/* AI Fundamentals & Applications - Section 2 */}
+					<h3 className="text-xl sm:text-2xl md:text-3xl text-center mb-8 md:mb-12 font-normal text-[#ffd54f]">
+						AI Fundamentals & Applications - Group 2
+					</h3>
+
+					{/* Carousel Container 2 */}
+					<div className="relative overflow-hidden mb-16 md:mb-20">
+						<div
+							className="flex transition-transform duration-500 ease-in-out"
+							style={{ transform: `translateX(-${currentTeam2 * 100}%)` }}
+						>
+							{[
 								{
 									name: "Silent Storm",
 									color: "#81c784",
-									layout: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center",
+									layout: "grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 justify-items-center",
 									cardWidth: "w-48 md:w-52",
 									gap: "gap-4 md:gap-6",
 									members: [
-										{
-											name: "กัมพล\nแซ่กวน",
-											image: "/images/teams/silent-storm/storm-gumpol.png",
-											role: "Intelligent software & IoT (O2)"
+										{ 
+											name: "Person N", 
+											image: "/images/teams/silent-storm/storm-gumpol.png", 
+											role: "Cybersecurity Expert" 
 										},
-										{
-											name: "ทิติดา\nเอนก",
-											image: "/images/teams/silent-storm/storm-tithi.png",
-											role: "Nextgen Developer (O1)"
+										{ 
+											name: "Person O", 
+											image: "/images/teams/silent-storm/storm-tithi.png", 
+											role: "Network Analyst" 
 										},
-										{
-											name: "รวิพร\nชาวดอน",
-											image: "/images/teams/silent-storm/storm-rawi.png",
-											role: "Nextgen Developer (O1)"
+										{ 
+											name: "Person P", 
+											image: "/images/teams/silent-storm/storm-rawi.png", 
+											role: "Security Consultant" 
 										},
-										{
-											name: "ฆนาการ\nสังคะบุตร",
-											image: "/images/teams/silent-storm/storm-kana.png",
-											role: "Automation Engineer (O1)"
+										{ 
+											name: "Person Q", 
+											image: "/images/teams/silent-storm/storm-kana.png", 
+											role: "Penetration Tester" 
 										}
 									]
 								},
@@ -633,57 +717,138 @@ export default function Home() {
 									cardWidth: "w-48 md:w-52",
 									gap: "gap-4 md:gap-6",
 									members: [
-										{
-											name: "สุริยา\nชินดา",
-											image: "/images/teams/ai-sheng/sheng-suri.png",
-											role: "ช่างเทคนิคเครื่องกล (O1)"
+										{ 
+											name: "Person R", 
+											image: "/images/teams/ai-sheng/sheng-suri.png", 
+											role: "AI Research Scientist" 
 										},
-										{
-											name: "สุกัญญา\nบุญทูล",
-											image: "/images/teams/ai-sheng/sheng-sugun.png",
-											role: "พนักงานซ่อมบำรุงอาวุโส (O2)"
+										{ 
+											name: "Person S", 
+											image: "/images/teams/ai-sheng/sheng-sugun.png", 
+											role: "Machine Learning Engineer" 
 										},
-										{
-											name: "สุรสีห์\nเพิ่มนาม",
-											image: "/images/teams/ai-sheng/sheng-sura.png",
-											role: "หัวหน้าส่วนงานระบบ (M1)"
+										{ 
+											name: "Person T", 
+											image: "/images/teams/ai-sheng/sheng-sura.png", 
+											role: "Data Scientist" 
 										}
 									]
 								},
 								{
 									name: "AuditX",
 									color: "#f06292",
-									layout: "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 justify-items-center",
+									layout: "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 justify-items-center",
 									cardWidth: "w-48 md:w-52",
 									gap: "gap-4 md:gap-6",
 									members: [
-										{
-											name: "สุภรัตน์\nรุ่มนุ่ม",
-											image: "/images/teams/auditx/x-supa.png",
-											role: "พนักงานตรวจสอบมาตรฐานอาวุโส (O2)"
+										{ 
+											name: "Person U", 
+											image: "/images/teams/auditx/x-supa.png", 
+											role: "Internal Auditor" 
 										},
-										{
-											name: "ชินกฤต\nกาญจนจงกล",
-											image: "/images/teams/auditx/x-shinna.png",
-											role: "เจ้าหน้าที่ตรวจสอบภายในอาวุโส (O2)"
+										{ 
+											name: "Person V", 
+											image: "/images/teams/auditx/x-shinna.png", 
+											role: "Risk Manager" 
 										},
-										{
-											name: "พัชรี\nเผื่อนเพาะ",
-											image: "/images/teams/auditx/x-patcha.png",
-											role: "ผู้จัดการส่วนตรวจสอบมาตรฐาน (M2)"
+										{ 
+											name: "Person W", 
+											image: "/images/teams/auditx/x-patcha.png", 
+											role: "Compliance Officer" 
 										},
-										{
-											name: "สมหฤทัย\nจันทกล",
-											image: "/images/teams/auditx/x-somha.png",
-											role: "เจ้าหน้าที่ตรวจสอบภายใน (O1)"
+										{ 
+											name: "Person X", 
+											image: "/images/teams/auditx/x-somha.png", 
+											role: "Fraud Analyst" 
 										},
-										{
-											name: "วิชนี\nมนัสวีระพร",
-											image: "/images/teams/auditx/x-wichcha.png",
-											role: "พนักงานตรวจสอบมาตรฐานอาวุโส (O2)"
+										{ 
+											name: "Person Y", 
+											image: "/images/teams/auditx/x-wichcha.png", 
+											role: "Audit Manager" 
 										}
 									]
-								},
+								}
+							].map((team, teamIndex) => (
+								<div key={teamIndex} className="w-full flex-shrink-0">
+									<h4 className="text-lg md:text-xl text-center mb-6" style={{ color: team.color }}>
+										Team: {team.name}
+									</h4>
+									<div className="flex justify-center mb-12 md:mb-6">
+										<div className={`${team.layout} ${team.gap} max-w-6xl mx-auto`}>
+											{team.members.map((member, i) => (
+												<div key={i} className={`group ${team.cardWidth}`}>
+													<div className="relative rounded-2xl overflow-hidden bg-gradient-to-b from-[#2a2f3e] to-[#1a1f2e] border border-white/10 transition-transform duration-300 hover:scale-105">
+														<div className="aspect-[1/1] bg-gradient-to-b from-gray-600 to-gray-700 relative">
+															<Image
+																src={member.image}
+																alt={member.name.replace('\n', ' ')}
+																fill
+																className="object-cover"
+															/>
+															<div className="absolute inset-0 bg-gradient-to-t from-[#1a1f2e] via-transparent to-transparent opacity-60"></div>
+														</div>
+														<div className="p-4">
+															<h4 className="text-sm md:text-base font-medium text-white mb-1 whitespace-pre-line">
+																{member.name}
+															</h4>
+															<p className="text-xs md:text-sm mb-2" style={{ color: team.color }}>Instructor</p>
+															<p className="text-gray-300 text-xs leading-relaxed">
+																{member.role}
+															</p>
+														</div>
+													</div>
+												</div>
+											))}
+										</div>
+									</div>
+								</div>
+							))}
+						</div>
+
+						{/* Navigation Buttons for Group 2 */}
+						<div className="flex justify-center items-center gap-2 md:gap-4 mt-8 flex-wrap">
+							<button
+								onClick={() => setCurrentTeam2(0)}
+								className={`px-3 md:px-4 py-2 rounded-full text-xs md:text-sm transition-all ${currentTeam2 === 0
+									? 'bg-gradient-to-r from-[#81c784] to-[#66bb6a] text-white'
+									: 'bg-white/10 text-gray-400 hover:bg-white/20'
+									}`}
+							>
+								Silent Storm
+							</button>
+							<button
+								onClick={() => setCurrentTeam2(1)}
+								className={`px-3 md:px-4 py-2 rounded-full text-xs md:text-sm transition-all ${currentTeam2 === 1
+									? 'bg-gradient-to-r from-[#ffb74d] to-[#ffa726] text-white'
+									: 'bg-white/10 text-gray-400 hover:bg-white/20'
+									}`}
+							>
+								AI-SHENG
+							</button>
+							<button
+								onClick={() => setCurrentTeam2(2)}
+								className={`px-3 md:px-4 py-2 rounded-full text-xs md:text-sm transition-all ${currentTeam2 === 2
+									? 'bg-gradient-to-r from-[#f06292] to-[#ec407a] text-white'
+									: 'bg-white/10 text-gray-400 hover:bg-white/20'
+									}`}
+							>
+								AuditX
+							</button>
+						</div>
+					</div>
+
+					{/* AI Fundamentals & Applications - Section 3 */}
+					<h3 className="text-xl sm:text-2xl md:text-3xl text-center mb-8 md:mb-12 font-normal text-[#ffd54f]">
+						AI Fundamentals & Applications - Group 3
+					</h3>
+
+					{/* Carousel Container 3 */}
+					<div className="relative overflow-hidden mb-16 md:mb-20">
+						<div
+							className="flex transition-transform duration-500 ease-in-out"
+							style={{ transform: `translateX(-${currentTeam3 * 100}%)` }}
+						>
+							{[
 								{
 									name: "AI Vision Ops",
 									color: "#9c27b0",
@@ -691,195 +856,276 @@ export default function Home() {
 									cardWidth: "w-48 md:w-52",
 									gap: "gap-4 md:gap-6",
 									members: [
-										{
-											name: "สุภชา\nใจแสน",
-											image: "/images/teams/ai-vision-ops/ops-supa.png",
-											role: "พนักงาน Letter Shop (O1)"
+										{ 
+											name: "Person Z", 
+											image: "/images/teams/ai-vision-ops/ops-supa.png", 
+											role: "Computer Vision Engineer" 
 										},
-										{
-											name: "สุวรส\nสุพร",
-											image: "/images/teams/ai-vision-ops/ops-suwa.png",
-											role: "หัวหน้าแผนก (O3)"
+										{ 
+											name: "Person AA", 
+											image: "/images/teams/ai-vision-ops/ops-suwa.png", 
+											role: "ML Operations Specialist" 
 										},
-										{
-											name: "เกศินี\nแซ่โค้ว",
-											image: "/images/teams/ai-vision-ops/ops-gesi.png",
-											role: "หัวหน้าส่วน Operation Support & QA (M1)"
+										{ 
+											name: "Person BB", 
+											image: "/images/teams/ai-vision-ops/ops-gesi.png", 
+											role: "AI Systems Engineer" 
 										}
 									]
 								},
 								{
 									name: "TaskMasters",
 									color: "#ff5722",
-									layout: "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 justify-items-center",
+									layout: "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 justify-items-center",
 									cardWidth: "w-48 md:w-52",
 									gap: "gap-4 md:gap-6",
 									members: [
-										{
-											name: "ชุติกาญจน์\nพรหมปัญญา",
-											image: "/images/teams/taskmasters/masters-chuti.png",
-											role: "เจ้าหน้าที่เร่งรัดหนี้สิน (O1)"
+										{ 
+											name: "Person CC", 
+											image: "/images/teams/taskmasters/masters-chuti.png", 
+											role: "Project Manager" 
 										},
-										{
-											name: "กฤษณี\nจันทร์อ่อน",
-											image: "/images/teams/taskmasters/masters-kritsa.png",
-											role: "Customer Success (O1)"
+										{ 
+											name: "Person DD", 
+											image: "/images/teams/taskmasters/masters-kritsa.png", 
+											role: "Scrum Master" 
 										},
-										{
-											name: "นภัสกร\nจันทร์ทองสุข",
-											image: "/images/teams/taskmasters/masters-napus.png",
-											role: "พนักงานบัญชีทั่วไป (O1)"
+										{ 
+											name: "Person EE", 
+											image: "/images/teams/taskmasters/masters-napus.png", 
+											role: "Team Lead" 
 										},
-										{
-											name: "กาญจนา\nพาพงษ์",
-											image: "/images/teams/taskmasters/masters-ghanja.png",
-											role: "เจ้าหน้าที่บัญชีต้นทุน (O1)"
+										{ 
+											name: "Person FF", 
+											image: "/images/teams/taskmasters/masters-ghanja.png", 
+											role: "Product Owner" 
 										},
-										{
-											name: "นันทวัน\nคุ้มกุดขมิ้น",
-											image: "/images/teams/taskmasters/masters-nanta.png",
-											role: "เจ้าหน้าที่บัญชีทั่วไป (O1)"
+										{ 
+											name: "Person GG", 
+											image: "/images/teams/taskmasters/masters-nanta.png", 
+											role: "Business Analyst" 
 										}
 									]
 								},
 								{
-									name: "Maybe not yet (อาจจะยังน๊าาา)",
-									color: "#26c6da",
-									layout: "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 justify-items-center",
+									name: "Maybe not yet",
+									color: "#3f51b5",
+									layout: "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 justify-items-center",
 									cardWidth: "w-48 md:w-52",
 									gap: "gap-4 md:gap-6",
 									members: [
-										{
-											name: "ปิยะรัตน์\nสนธิเจริญ",
-											image: "/images/teams//maybe-not-yet/yet-piya.png",
-											role: "Sales Coordinator (O1)"
+										{ 
+											name: "Person HH", 
+											image: "/images/teams//maybe-not-yet/yet-piya.png", 
+											role: "Research Engineer" 
 										},
-										{
-											name: "สัตตกมล\nแก้วเจริญชัย",
-											image: "/images/teams//maybe-not-yet/yet-satta.png",
-											role: "WHM Support (O1)"
+										{ 
+											name: "Person II", 
+											image: "/images/teams//maybe-not-yet/yet-satta.png", 
+											role: "Innovation Lead" 
 										},
-										{
-											name: "สุทัศน์\nมะยมทอง",
-											image: "/images/teams//maybe-not-yet/yet-sutus.png",
-											role: "Senior Coordinator Supervisor (M1)"
+										{ 
+											name: "Person JJ", 
+											image: "/images/teams//maybe-not-yet/yet-sutus.png", 
+											role: "Strategy Consultant" 
 										},
-										{
-											name: "วิจิตรา\nจ่าคิ้ม",
-											image: "/images/teams//maybe-not-yet/yet-wijit.png",
-											role: "Sales Coordinator (O1)"
+										{ 
+											name: "Person KK", 
+											image: "/images/teams//maybe-not-yet/yet-wijit.png", 
+											role: "Technology Advisor" 
 										},
-										{
-											name: "วรางค์\nสุขกาย",
-											image: "/images/teams//maybe-not-yet/yet-warang.png",
-											role: "WHM Support (O1)"
+										{ 
+											name: "Person LL", 
+											image: "/images/teams//maybe-not-yet/yet-warang.png", 
+											role: "Future Tech Specialist" 
 										}
 									]
-								},
+								}
+							].map((team, teamIndex) => (
+								<div key={teamIndex} className="w-full flex-shrink-0">
+									<h4 className="text-lg md:text-xl text-center mb-6" style={{ color: team.color }}>
+										Team: {team.name}
+									</h4>
+									<div className="flex justify-center mb-12 md:mb-6">
+										<div className={`${team.layout} ${team.gap} max-w-6xl mx-auto`}>
+											{team.members.map((member, i) => (
+												<div key={i} className={`group ${team.cardWidth}`}>
+													<div className="relative rounded-2xl overflow-hidden bg-gradient-to-b from-[#2a2f3e] to-[#1a1f2e] border border-white/10 transition-transform duration-300 hover:scale-105">
+														<div className="aspect-[1/1] bg-gradient-to-b from-gray-600 to-gray-700 relative">
+															<Image
+																src={member.image}
+																alt={member.name.replace('\n', ' ')}
+																fill
+																className="object-cover"
+															/>
+															<div className="absolute inset-0 bg-gradient-to-t from-[#1a1f2e] via-transparent to-transparent opacity-60"></div>
+														</div>
+														<div className="p-4">
+															<h4 className="text-sm md:text-base font-medium text-white mb-1 whitespace-pre-line">
+																{member.name}
+															</h4>
+															<p className="text-xs md:text-sm mb-2" style={{ color: team.color }}>Instructor</p>
+															<p className="text-gray-300 text-xs leading-relaxed">
+																{member.role}
+															</p>
+														</div>
+													</div>
+												</div>
+											))}
+										</div>
+									</div>
+								</div>
+							))}
+						</div>
+
+						{/* Navigation Buttons for Group 3 */}
+						<div className="flex justify-center items-center gap-2 md:gap-4 mt-8 flex-wrap">
+							<button
+								onClick={() => setCurrentTeam3(0)}
+								className={`px-3 md:px-4 py-2 rounded-full text-xs md:text-sm transition-all ${currentTeam3 === 0
+									? 'bg-gradient-to-r from-[#9c27b0] to-[#8e24aa] text-white'
+									: 'bg-white/10 text-gray-400 hover:bg-white/20'
+									}`}
+							>
+								AI Vision Ops
+							</button>
+							<button
+								onClick={() => setCurrentTeam3(1)}
+								className={`px-3 md:px-4 py-2 rounded-full text-xs md:text-sm transition-all ${currentTeam3 === 1
+									? 'bg-gradient-to-r from-[#ff5722] to-[#f4511e] text-white'
+									: 'bg-white/10 text-gray-400 hover:bg-white/20'
+									}`}
+							>
+								TaskMasters
+							</button>
+							<button
+								onClick={() => setCurrentTeam3(2)}
+								className={`px-3 md:px-4 py-2 rounded-full text-xs md:text-sm transition-all ${currentTeam3 === 2
+									? 'bg-gradient-to-r from-[#3f51b5] to-[#3949ab] text-white'
+									: 'bg-white/10 text-gray-400 hover:bg-white/20'
+									}`}
+							>
+								Maybe not yet
+							</button>
+						</div>
+					</div>
+
+					{/* AI Fundamentals & Applications - Section 4 */}
+					<h3 className="text-xl sm:text-2xl md:text-3xl text-center mb-8 md:mb-12 font-normal text-[#ffd54f]">
+						AI Fundamentals & Applications - Group 4
+					</h3>
+
+					{/* Carousel Container 4 */}
+					<div className="relative overflow-hidden mb-16 md:mb-20">
+						<div
+							className="flex transition-transform duration-500 ease-in-out"
+							style={{ transform: `translateX(-${currentTeam4 * 100}%)` }}
+						>
+							{[
 								{
 									name: "Wharehouse and The Gang",
-									color: "#d4e157",
-									layout: "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 justify-items-center",
+									color: "#607d8b",
+									layout: "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 justify-items-center",
 									cardWidth: "w-48 md:w-52",
 									gap: "gap-4 md:gap-6",
 									members: [
-										{
-											name: "สุธี\nวัฒนพันธ์",
-											image: "/images/teams/wharehouse-and-the-gang/gang-suthee.png",
-											role: "หัวหน้าส่วน Fulfillment & Project (M1)"
+										{ 
+											name: "Person MM", 
+											image: "/images/teams/wharehouse-and-the-gang/gang-suthee.png", 
+											role: "Warehouse Manager" 
 										},
-										{
-											name: "สุข\nจันสุริ",
-											image: "/images/teams/wharehouse-and-the-gang/gang-suk.png",
-											role: "พนักงานควบคุมการรับ-ส่งสินค้า (O1)"
+										{ 
+											name: "Person NN", 
+											image: "/images/teams/wharehouse-and-the-gang/gang-suk.png", 
+											role: "Logistics Coordinator" 
 										},
-										{
-											name: "ปภาวดี\nพุ่มสุวรรณ",
-											image: "/images/teams/wharehouse-and-the-gang/gang-papaa.png",
-											role: "พนักงานควบคุมการรับ-ส่งสินค้า (O1)"
+										{ 
+											name: "Person OO", 
+											image: "/images/teams/wharehouse-and-the-gang/gang-papaa.png", 
+											role: "Inventory Specialist" 
 										},
-										{
-											name: "อารีรัตน์\nแทนพลกรัง",
-											image: "/images/teams/wharehouse-and-the-gang/gang-aree.png",
-											role: "พนักงานธุรการคลังสินค้า (O1)"
+										{ 
+											name: "Person PP", 
+											image: "/images/teams/wharehouse-and-the-gang/gang-aree.png", 
+											role: "Supply Chain Analyst" 
 										},
-										{
-											name: "ประครองรัตน์\nพิมพ์สว่าง",
-											image: "/images/teams/wharehouse-and-the-gang/gang-prakrong.png",
-											role: "พนักงานธุรการคลังสินค้า (O1)"
+										{ 
+											name: "Person QQ", 
+											image: "/images/teams/wharehouse-and-the-gang/gang-prakrong.png", 
+											role: "Operations Lead" 
 										}
 									]
 								},
 								{
 									name: "Production",
-									color: "#ff6e40",
-									layout: "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 justify-items-center",
+									color: "#795548",
+									layout: "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 justify-items-center",
 									cardWidth: "w-48 md:w-52",
 									gap: "gap-4 md:gap-6",
 									members: [
-										{
-											name: "พิสิฐ\nมิ่งขวัญ",
-											image: "/images/teams/production/on-pisit.png",
-											role: "หัวหน้าส่วน AfterPress (M1)"
+										{ 
+											name: "Person RR", 
+											image: "/images/teams/production/on-pisit.png", 
+											role: "Production Manager" 
 										},
-										{
-											name: "ภาวิณี\nอินทร์โพธิ์กลาง",
-											image: "/images/teams/production/on-pawi.png",
-											role: "หัวหน้าส่วน Label & Packaging (M1)"
+										{ 
+											name: "Person SS", 
+											image: "/images/teams/production/on-pawi.png", 
+											role: "Manufacturing Engineer" 
 										},
-										{
-											name: "นันทนา\nเจริญกิจ",
-											image: "/images/teams/production/on-nunta.png",
-											role: "หัวหน้าส่วน ERP & Report (M1)"
+										{ 
+											name: "Person TT", 
+											image: "/images/teams/production/on-nunta.png", 
+											role: "Quality Controller" 
 										},
-										{
-											name: "กฤษณะ\nพุ่มโพธิ์",
-											image: "/images/teams/production/on-kritsa.png",
-											role: "หัวหน้าส่วน Press Sheet (M1)"
+										{ 
+											name: "Person UU", 
+											image: "/images/teams/production/on-kritsa.png", 
+											role: "Process Optimizer" 
 										},
-										{
-											name: "สมคิด\nคำแก้ว",
-											image: "/images/teams/production/on-somkit.png",
-											role: "หัวหน้าส่วนพิมพ์ม้วน (M1)"
+										{ 
+											name: "Person VV", 
+											image: "/images/teams/production/on-somkit.png", 
+											role: "Production Planner" 
 										},
-										{
-											name: "ชวินทร์\nวรนพสุต",
-											image: "/images/teams/production/on-chawin.png",
-											role: "ผู้จัดการส่วน การพิมพ์ดิจิตอล (M2)"
+										{ 
+											name: "Person WW", 
+											image: "/images/teams/production/on-chawin.png", 
+											role: "Operations Supervisor" 
 										}
 									]
 								},
 								{
-									name: "Let's do this (เอาแล้วน๊าาา)",
+									name: "Let's do this",
 									color: "#009688",
-									layout: "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 justify-items-center",
+									layout: "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 justify-items-center",
 									cardWidth: "w-48 md:w-52",
 									gap: "gap-4 md:gap-6",
 									members: [
-										{
-											name: "อโณชา\nพุมมาเกิด",
-											image: "/images/teams/lets-do-this/this-ano.png",
-											role: "Sales Executive (O1)"
+										{ 
+											name: "Person XX", 
+											image: "/images/teams/lets-do-this/this-ano.png", 
+											role: "Motivation Coach" 
 										},
-										{
-											name: "จุฑารัตน์\nสอนประสิทธิ์",
-											image: "/images/teams/lets-do-this/this-juta.png",
-											role: "Sales Supervisor (O3)"
+										{ 
+											name: "Person YY", 
+											image: "/images/teams/lets-do-this/this-juta.png", 
+											role: "Team Builder" 
 										},
-										{
-											name: "ศุภาวรรณ\nชัยทองวงศ์วัฒนา",
-											image: "/images/teams/lets-do-this/this-supa.png",
-											role: "พนักงานขายต่างประเทศ (O1)"
+										{ 
+											name: "Person ZZ", 
+											image: "/images/teams/lets-do-this/this-supa.png", 
+											role: "Change Agent" 
 										},
-										{
-											name: "กาญจนา\nเฮ้งหลี",
-											image: "/images/teams/lets-do-this/this-ganja.png",
-											role: "Sales Executive (O1)"
+										{ 
+											name: "Person AAA", 
+											image: "/images/teams/lets-do-this/this-ganja.png", 
+											role: "Innovation Driver" 
 										},
-										{
-											name: "ธนรัตน์\nรอดพาที",
-											image: "/images/teams/lets-do-this/this-tana.png",
-											role: "Sales Executive (O1)"
+										{ 
+											name: "Person BBB", 
+											image: "/images/teams/lets-do-this/this-tana.png", 
+											role: "Performance Coach" 
 										}
 									]
 								}
@@ -903,10 +1149,10 @@ export default function Home() {
 															<div className="absolute inset-0 bg-gradient-to-t from-[#1a1f2e] via-transparent to-transparent opacity-60"></div>
 														</div>
 														<div className="p-4">
-															<h4 className="text-sm md:text-xl font-medium text-white mb-1 whitespace-pre-line">
+															<h4 className="text-sm md:text-base font-medium text-white mb-1 whitespace-pre-line">
 																{member.name}
 															</h4>
-															<p className="text-xs md:text-lg mb-2" style={{ color: team.color }}>Challenger</p>
+															<p className="text-xs md:text-sm mb-2" style={{ color: team.color }}>Instructor</p>
 															<p className="text-gray-300 text-xs leading-relaxed">
 																{member.role}
 															</p>
@@ -920,75 +1166,79 @@ export default function Home() {
 							))}
 						</div>
 
-						{/* Left Arrow Button */}
-						<button
-							onClick={() => setCurrentTeamIndex(currentTeamIndex > 0 ? currentTeamIndex - 1 : 11)}
-							className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-300 border border-white/20"
-						>
-							<svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-							</svg>
-						</button>
-
-						{/* Right Arrow Button */}
-						<button
-							onClick={() => setCurrentTeamIndex(currentTeamIndex < 11 ? currentTeamIndex + 1 : 0)}
-							className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-300 border border-white/20"
-						>
-							<svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-							</svg>
-						</button>
-
-						{/* Team Counter */}
-						<div className="flex justify-center items-center gap-2 mt-8">
-							<span className="text-gray-400 text-sm">
-								{currentTeamIndex + 1} / 12
-							</span>
+						{/* Navigation Buttons for Group 4 */}
+						<div className="flex justify-center items-center gap-2 md:gap-4 mt-8 flex-wrap">
+							<button
+								onClick={() => setCurrentTeam4(0)}
+								className={`px-3 md:px-4 py-2 rounded-full text-xs md:text-sm transition-all ${currentTeam4 === 0
+									? 'bg-gradient-to-r from-[#607d8b] to-[#546e7a] text-white'
+									: 'bg-white/10 text-gray-400 hover:bg-white/20'
+									}`}
+							>
+								Wharehouse and The Gang
+							</button>
+							<button
+								onClick={() => setCurrentTeam4(1)}
+								className={`px-3 md:px-4 py-2 rounded-full text-xs md:text-sm transition-all ${currentTeam4 === 1
+									? 'bg-gradient-to-r from-[#795548] to-[#6d4c41] text-white'
+									: 'bg-white/10 text-gray-400 hover:bg-white/20'
+									}`}
+							>
+								Production
+							</button>
+							<button
+								onClick={() => setCurrentTeam4(2)}
+								className={`px-3 md:px-4 py-2 rounded-full text-xs md:text-sm transition-all ${currentTeam4 === 2
+									? 'bg-gradient-to-r from-[#009688] to-[#00796b] text-white'
+									: 'bg-white/10 text-gray-400 hover:bg-white/20'
+									}`}
+							>
+								Let&apos;s do this
+							</button>
 						</div>
 					</div>
 
 					{/* IT Consult - Section 5 */}
 					<h3 className="text-xl sm:text-2xl md:text-3xl text-center mb-8 md:mb-12 font-normal text-[#ffd54f]">
-						AI Advisors
+						IT Consult
 					</h3>
 
 					<h4 className="text-lg md:text-xl text-center mb-6 text-[#e91e63]">
-						IT Team
+						Team: IT Consult
 					</h4>
 
 					<div className="flex justify-center mb-16 md:mb-20">
-						<div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6 max-w-8xl mx-auto">
+						<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6 max-w-8xl mx-auto">
 							{[
-								{
-									name: "น้องนก",
-									image: "/images/teams/it-consult/ult-ganok.png",
-									role: "Product Trainer Specialist (O3)"
+								{ 
+									name: "Person DDD", 
+									image: "/images/teams/it-consult/ult-ganok.png", 
+									role: "Network Engineer" 
 								},
-								{
-									name: "น้องอร",
-									image: "/images/teams/it-consult/ult-ora.png",
-									role: "Project Manager (O1)"
+								{ 
+									name: "Person EEE", 
+									image: "/images/teams/it-consult/ult-ora.png", 
+									role: "IT Security Specialist" 
 								},
-								{
-									name: "น้องโอ๊ต",
-									image: "/images/teams/it-consult/ult-wera.png",
-									role: "Network Engineer (O1)"
+								{ 
+									name: "Person FFF", 
+									image: "/images/teams/it-consult/ult-wera.png", 
+									role: "Technical Support Lead" 
 								},
-								{
-									name: "น้องอาร์ม",
-									image: "/images/teams/it-consult/ult-rana.png",
-									role: "Document Designer (O1)"
+								{ 
+									name: "Person GGG", 
+									image: "/images/teams/it-consult/ult-rana.png", 
+									role: "Cloud Solutions Architect" 
 								},
-								{
-									name: "น้องต้อม",
-									image: "/images/teams/it-consult/ult-ratcha.png",
-									role: "ERP Specialist (O2)"
+								{ 
+									name: "Person HHH", 
+									image: "/images/teams/it-consult/ult-ratcha.png", 
+									role: "DevOps Engineer" 
 								},
-								{
-									name: "น้องนิก",
-									image: "/images/teams/it-consult/ult-chidcha.png",
-									role: "IT Security Officer (O2)"
+								{ 
+									name: "Person CCC", 
+									image: "/images/teams/it-consult/ult-chidcha.png", 
+									role: "System Administrator" 
 								}
 							].map((member, i) => (
 								<div key={i} className="group w-48 md:w-52">
@@ -1003,10 +1253,10 @@ export default function Home() {
 											<div className="absolute inset-0 bg-gradient-to-t from-[#1a1f2e] via-transparent to-transparent opacity-60"></div>
 										</div>
 										<div className="p-4">
-											<h4 className="text-sm md:text-xl font-medium text-white mb-1 whitespace-pre-line">
+											<h4 className="text-sm md:text-base font-medium text-white mb-1 whitespace-pre-line">
 												{member.name}
 											</h4>
-											<p className="text-[#e91e63] text-xs md:text-lg mb-2">Advisor</p>
+											<p className="text-[#e91e63] text-xs md:text-sm mb-2">Instructor</p>
 											<p className="text-gray-300 text-xs leading-relaxed">
 												{member.role}
 											</p>
