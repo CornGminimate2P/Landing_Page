@@ -422,19 +422,21 @@ export default function Home() {
 				</div>
 			</section>
 
+			{/* Team Participants Section */}
 			<section className="py-12 md:py-20 bg-gradient-to-b from-[#0a0e27] to-[#1a237e]">
+				{/* Section Headers */}
 				<div className="max-w-8xl mx-auto px-4 md:px-5">
 					<h2 className="text-3xl sm:text-4xl md:text-5xl text-center mb-4 md:mb-6 font-bold text-white">
 						Team Participants
 					</h2>
 
-					{/* Program Director */}
 					<h3 className="text-xl sm:text-2xl md:text-3xl text-center mb-8 md:mb-12 font-normal text-[#ffd54f]">
 						Mentors
 					</h3>
 
-					<div className="flex justify-center mb-12 md:mb-16">
-						<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4 md:gap-6 max-w-8xl">
+					{/* Desktop Grid View */}
+					<div className="hidden lg:flex justify-center mb-12 md:mb-16">
+						<div className="grid grid-cols-6 gap-4 md:gap-6 max-w-8xl">
 							{[
 								{
 									name: "สายชล\nบัวบานศรี",
@@ -492,14 +494,82 @@ export default function Home() {
 							))}
 						</div>
 					</div>
+				</div>
 
-					{/* AI Fundamentals & Applications - All Teams */}
+				{/* Mobile Horizontal Scroll View - Outside container */}
+				<div className="lg:hidden mb-12 md:mb-16">
+					<div className="overflow-x-auto pb-4">
+						<div className="flex gap-4 pl-4 after:content-[''] after:pr-1">
+							{[
+								{
+									name: "สายชล\nบัวบานศรี",
+									image: "/images/mentors/mentor-saichon.png",
+									role: "ผู้จัดการฝ่ายบริหารคลังสินค้าและจัดส่ง (M3)"
+								},
+								{
+									name: "สมเกียรติ\nสุกัญจนศิร",
+									image: "/images/mentors/mentor-somkiat.png",
+									role: "ผู้จัดการฝ่ายสำนักงาน (M3)"
+								},
+								{
+									name: "ชัยยันต์\nบุญเจริญชัย",
+									image: "/images/mentors/mentor-chaiyan.png",
+									role: "ที่ปรึกษา (M3)"
+								},
+								{
+									name: "อาคเนย์\nเกตุกลิ่นแก้ว",
+									image: "/images/mentors/mentor-arkveld.png",
+									role: "ผู้จัดการฝ่ายเทคโนโลยีสารสนเทศ (M3)"
+								},
+								{
+									name: "บุญเปรม\nสุขกสี",
+									image: "/images/mentors/mentor-bunprem.png",
+									role: "ผู้จัดการฝ่ายผลิต (M3)"
+								},
+								{
+									name: "ธารทิพย์\nศรีงามผ่อง",
+									image: "/images/mentors/mentor-tarntip.png",
+									role: "ผู้จัดการฝ่ายบัญชีและการเงิน (M3)"
+								}
+							].map((director, i) => (
+								<div key={i} className="flex-shrink-0 w-48">
+									<div className="relative rounded-2xl overflow-hidden bg-gradient-to-b from-[#2a2f3e] to-[#1a1f2e] border border-white/10">
+										<div className="aspect-[1/1] bg-gradient-to-b from-gray-600 to-gray-700 relative">
+											<Image
+												src={director.image}
+												alt={director.name.replace('\n', ' ')}
+												fill
+												className="object-cover"
+											/>
+											<div className="absolute inset-0 bg-gradient-to-t from-[#1a1f2e] via-transparent to-transparent opacity-60"></div>
+										</div>
+										<div className="p-4">
+											<h4 className="text-sm font-medium text-white mb-1 whitespace-pre-line">
+												{director.name}
+											</h4>
+											<p className="text-[#66bb6a] text-xs mb-2">Mentor</p>
+											<p className="text-gray-300 text-xs leading-relaxed">
+												{director.role}
+											</p>
+										</div>
+									</div>
+								</div>
+							))}
+						</div>
+					</div>
+				</div>
+
+				{/* AI Challenger Teams Header */}
+				<div className="px-4 md:px-5">
 					<h3 className="text-xl sm:text-2xl md:text-3xl text-center mb-8 md:mb-12 font-normal text-[#ffd54f]">
 						AI Challenger Teams
 					</h3>
+				</div>
 
-					{/* Teams Carousel Container */}
-					<div className="relative overflow-hidden mb-16 md:mb-20">
+				{/* Teams Carousel Container */}
+				<div className="relative overflow-hidden mb-16 md:mb-20">
+					{/* Desktop View - Carousel with Grid Layout */}
+					<div className="hidden lg:block px-4 md:px-5">
 						<div
 							className="flex transition-transform duration-500 ease-in-out"
 							style={{ transform: `translateX(-${currentTeamIndex * 100}%)` }}
@@ -919,36 +989,425 @@ export default function Home() {
 								</div>
 							))}
 						</div>
+					</div>
 
-						{/* Left Arrow Button */}
-						<button
-							onClick={() => setCurrentTeamIndex(currentTeamIndex > 0 ? currentTeamIndex - 1 : 11)}
-							className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-300 border border-white/20"
+					{/* Mobile View - Carousel with Horizontal Scroll for Each Team */}
+					<div className="lg:hidden">
+						<div
+							className="flex transition-transform duration-500 ease-in-out"
+							style={{ transform: `translateX(-${currentTeamIndex * 100}%)` }}
 						>
-							<svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-							</svg>
-						</button>
-
-						{/* Right Arrow Button */}
-						<button
-							onClick={() => setCurrentTeamIndex(currentTeamIndex < 11 ? currentTeamIndex + 1 : 0)}
-							className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-300 border border-white/20"
-						>
-							<svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-							</svg>
-						</button>
-
-						{/* Team Counter */}
-						<div className="flex justify-center items-center gap-2 mt-8">
-							<span className="text-gray-400 text-sm">
-								{currentTeamIndex + 1} / 12
-							</span>
+							{[
+								{
+									name: "The Giver",
+									color: "#64b5f6",
+									members: [
+										{
+											name: "ชุตินันท์\nสุวรรณรักษา",
+											image: "/images/teams/the-giver/giver-chuti.png",
+											role: "เจ้าหน้าที่จัดซื้ออาวุโส (O2)"
+										},
+										{
+											name: "ปณิตตา\nจิตร์อ่อง",
+											image: "/images/teams/the-giver/giver-panit.png",
+											role: " เจ้าหน้าที่จัดซื้ออาวุโส (O2)"
+										},
+										{
+											name: "สิริวิมล\nยอดถา",
+											image: "/images/teams/the-giver/giver-siri.png",
+											role: "หัวหน้าแผนกจัดซื้อ (O3)"
+										},
+										{
+											name: "สิทธิชัย\nทางสวาย",
+											image: "/images/teams/the-giver/giver-sitthi.png",
+											role: "เจ้าหน้าที่จัดซื้ออาวุโส (O2)"
+										},
+										{
+											name: "สุดาพร\nสันประภา",
+											image: "/images/teams/the-giver/giver-suda.png",
+											role: "เจ้าหน้าที่จัดซื้อ (O1)"
+										}
+									]
+								},
+								{
+									name: "ThinkUp",
+									color: "#ba68c8",
+									members: [
+										{
+											name: "สุพิน\nเปกรัมย์",
+											image: "/images/teams/thinkup/up-supin.png",
+											role: "ผู้จัดการส่วน Preproduction (M2)"
+										},
+										{
+											name: "กุลวดี\nแซ่โค้ว",
+											image: "/images/teams/thinkup/up-gulla.png",
+											role: "หัวหน้าแผนก Master Production planning (O3)"
+										},
+										{
+											name: "มานะ\nพันธุ์ดี",
+											image: "/images/teams/thinkup/up-mana.png",
+											role: "หัวหน้าส่วน AfterPress (M1)"
+										}
+									]
+								},
+								{
+									name: "AccNext",
+									color: "#4fc3f7",
+									members: [
+										{
+											name: "กรองแก้ว\nวังแก้วหิรัญ",
+											image: "/images/teams/accnext/next-grong.png",
+											role: "หัวหน้าส่วนบัญชีต้นทุน (M1)"
+										},
+										{
+											name: "วีรยุทธ\nชาติทองคำ",
+											image: "/images/teams/accnext/next-wera.png",
+											role: "เจ้าหน้าที่คำนวณราคาอาวุโส (O2)"
+										},
+										{
+											name: "ทิวาพงศ์\nสุดสวาสดิ์",
+											image: "/images/teams/accnext/next-tiwa.png",
+											role: "หัวหน้าส่วนบัญชีทั่วไป (M1)"
+										},
+										{
+											name: "ทัศนีย์\nบรรณทิพย์",
+											image: "/images/teams/accnext/next-tussa.png",
+											role: "หัวหน้าแผนกบัญชีทั่วไป (O3)"
+										},
+										{
+											name: "พิสมัย\nยิ้มจันทร์",
+											image: "/images/teams/accnext/next-pissa.png",
+											role: "เจ้าหน้าที่การเงินรับ-จ่าย (O1)"
+										}
+									]
+								},
+								{
+									name: "Silent Storm",
+									color: "#81c784",
+									members: [
+										{
+											name: "กัมพล\nแซ่กวน",
+											image: "/images/teams/silent-storm/storm-gumpol.png",
+											role: "Intelligent software & IoT (O2)"
+										},
+										{
+											name: "ทิติดา\nเอนก",
+											image: "/images/teams/silent-storm/storm-tithi.png",
+											role: "Nextgen Developer (O1)"
+										},
+										{
+											name: "รวิพร\nชาวดอน",
+											image: "/images/teams/silent-storm/storm-rawi.png",
+											role: "Nextgen Developer (O1)"
+										},
+										{
+											name: "ฆนาการ\nสังคะบุตร",
+											image: "/images/teams/silent-storm/storm-kana.png",
+											role: "Automation Engineer (O1)"
+										}
+									]
+								},
+								{
+									name: "AI-SHENG",
+									color: "#ffb74d",
+									members: [
+										{
+											name: "สุริยา\nชินดา",
+											image: "/images/teams/ai-sheng/sheng-suri.png",
+											role: "ช่างเทคนิคเครื่องกล (O1)"
+										},
+										{
+											name: "สุกัญญา\nบุญทูล",
+											image: "/images/teams/ai-sheng/sheng-sugun.png",
+											role: "พนักงานซ่อมบำรุงอาวุโส (O2)"
+										},
+										{
+											name: "สุรสีห์\nเพิ่มนาม",
+											image: "/images/teams/ai-sheng/sheng-sura.png",
+											role: "หัวหน้าส่วนงานระบบ (M1)"
+										}
+									]
+								},
+								{
+									name: "AuditX",
+									color: "#f06292",
+									members: [
+										{
+											name: "สุภรัตน์\nรุ่มนุ่ม",
+											image: "/images/teams/auditx/x-supa.png",
+											role: "พนักงานตรวจสอบมาตรฐานอาวุโส (O2)"
+										},
+										{
+											name: "ชินกฤต\nกาญจนจงกล",
+											image: "/images/teams/auditx/x-shinna.png",
+											role: "เจ้าหน้าที่ตรวจสอบภายในอาวุโส (O2)"
+										},
+										{
+											name: "พัชรี\nเผื่อนเพาะ",
+											image: "/images/teams/auditx/x-patcha.png",
+											role: "ผู้จัดการส่วนตรวจสอบมาตรฐาน (M2)"
+										},
+										{
+											name: "สมหฤทัย\nจันทกล",
+											image: "/images/teams/auditx/x-somha.png",
+											role: "เจ้าหน้าที่ตรวจสอบภายใน (O1)"
+										},
+										{
+											name: "วิชนี\nมนัสวีระพร",
+											image: "/images/teams/auditx/x-wichcha.png",
+											role: "พนักงานตรวจสอบมาตรฐานอาวุโส (O2)"
+										}
+									]
+								},
+								{
+									name: "AI Vision Ops",
+									color: "#9c27b0",
+									members: [
+										{
+											name: "สุภชา\nใจแสน",
+											image: "/images/teams/ai-vision-ops/ops-supa.png",
+											role: "พนักงาน Letter Shop (O1)"
+										},
+										{
+											name: "สุวรส\nสุพร",
+											image: "/images/teams/ai-vision-ops/ops-suwa.png",
+											role: "หัวหน้าแผนก (O3)"
+										},
+										{
+											name: "เกศินี\nแซ่โค้ว",
+											image: "/images/teams/ai-vision-ops/ops-gesi.png",
+											role: "หัวหน้าส่วน Operation Support & QA (M1)"
+										}
+									]
+								},
+								{
+									name: "TaskMasters",
+									color: "#ff5722",
+									members: [
+										{
+											name: "ชุติกาญจน์\nพรหมปัญญา",
+											image: "/images/teams/taskmasters/masters-chuti.png",
+											role: "เจ้าหน้าที่เร่งรัดหนี้สิน (O1)"
+										},
+										{
+											name: "กฤษณี\nจันทร์อ่อน",
+											image: "/images/teams/taskmasters/masters-kritsa.png",
+											role: "Customer Success (O1)"
+										},
+										{
+											name: "นภัสกร\nจันทร์ทองสุข",
+											image: "/images/teams/taskmasters/masters-napus.png",
+											role: "พนักงานบัญชีทั่วไป (O1)"
+										},
+										{
+											name: "กาญจนา\nพาพงษ์",
+											image: "/images/teams/taskmasters/masters-ghanja.png",
+											role: "เจ้าหน้าที่บัญชีต้นทุน (O1)"
+										},
+										{
+											name: "นันทวัน\nคุ้มกุดขมิ้น",
+											image: "/images/teams/taskmasters/masters-nanta.png",
+											role: "เจ้าหน้าที่บัญชีทั่วไป (O1)"
+										}
+									]
+								},
+								{
+									name: "Maybe not yet (อาจจะยังน๊าาา)",
+									color: "#26c6da",
+									members: [
+										{
+											name: "ปิยะรัตน์\nสนธิเจริญ",
+											image: "/images/teams//maybe-not-yet/yet-piya.png",
+											role: "Sales Coordinator (O1)"
+										},
+										{
+											name: "สัตตกมล\nแก้วเจริญชัย",
+											image: "/images/teams//maybe-not-yet/yet-satta.png",
+											role: "WHM Support (O1)"
+										},
+										{
+											name: "สุทัศน์\nมะยมทอง",
+											image: "/images/teams//maybe-not-yet/yet-sutus.png",
+											role: "Senior Coordinator Supervisor (M1)"
+										},
+										{
+											name: "วิจิตรา\nจ่าคิ้ม",
+											image: "/images/teams//maybe-not-yet/yet-wijit.png",
+											role: "Sales Coordinator (O1)"
+										},
+										{
+											name: "วรางค์\nสุขกาย",
+											image: "/images/teams//maybe-not-yet/yet-warang.png",
+											role: "WHM Support (O1)"
+										}
+									]
+								},
+								{
+									name: "Wharehouse and The Gang",
+									color: "#d4e157",
+									members: [
+										{
+											name: "สุธี\nวัฒนพันธ์",
+											image: "/images/teams/wharehouse-and-the-gang/gang-suthee.png",
+											role: "หัวหน้าส่วน Fulfillment & Project (M1)"
+										},
+										{
+											name: "สุข\nจันสุริ",
+											image: "/images/teams/wharehouse-and-the-gang/gang-suk.png",
+											role: "พนักงานควบคุมการรับ-ส่งสินค้า (O1)"
+										},
+										{
+											name: "ปภาวดี\nพุ่มสุวรรณ",
+											image: "/images/teams/wharehouse-and-the-gang/gang-papaa.png",
+											role: "พนักงานควบคุมการรับ-ส่งสินค้า (O1)"
+										},
+										{
+											name: "อารีรัตน์\nแทนพลกรัง",
+											image: "/images/teams/wharehouse-and-the-gang/gang-aree.png",
+											role: "พนักงานธุรการคลังสินค้า (O1)"
+										},
+										{
+											name: "ประครองรัตน์\nพิมพ์สว่าง",
+											image: "/images/teams/wharehouse-and-the-gang/gang-prakrong.png",
+											role: "พนักงานธุรการคลังสินค้า (O1)"
+										}
+									]
+								},
+								{
+									name: "Production",
+									color: "#ff6e40",
+									members: [
+										{
+											name: "พิสิฐ\nมิ่งขวัญ",
+											image: "/images/teams/production/on-pisit.png",
+											role: "หัวหน้าส่วน AfterPress (M1)"
+										},
+										{
+											name: "ภาวิณี\nอินทร์โพธิ์กลาง",
+											image: "/images/teams/production/on-pawi.png",
+											role: "หัวหน้าส่วน Label & Packaging (M1)"
+										},
+										{
+											name: "นันทนา\nเจริญกิจ",
+											image: "/images/teams/production/on-nunta.png",
+											role: "หัวหน้าส่วน ERP & Report (M1)"
+										},
+										{
+											name: "กฤษณะ\nพุ่มโพธิ์",
+											image: "/images/teams/production/on-kritsa.png",
+											role: "หัวหน้าส่วน Press Sheet (M1)"
+										},
+										{
+											name: "สมคิด\nคำแก้ว",
+											image: "/images/teams/production/on-somkit.png",
+											role: "หัวหน้าส่วนพิมพ์ม้วน (M1)"
+										},
+										{
+											name: "ชวินทร์\nวรนพสุต",
+											image: "/images/teams/production/on-chawin.png",
+											role: "ผู้จัดการส่วน การพิมพ์ดิจิตอล (M2)"
+										}
+									]
+								},
+								{
+									name: "Let's do this (เอาแล้วน๊าาา)",
+									color: "#009688",
+									members: [
+										{
+											name: "อโณชา\nพุมมาเกิด",
+											image: "/images/teams/lets-do-this/this-ano.png",
+											role: "Sales Executive (O1)"
+										},
+										{
+											name: "จุฑารัตน์\nสอนประสิทธิ์",
+											image: "/images/teams/lets-do-this/this-juta.png",
+											role: "Sales Supervisor (O3)"
+										},
+										{
+											name: "ศุภาวรรณ\nชัยทองวงศ์วัฒนา",
+											image: "/images/teams/lets-do-this/this-supa.png",
+											role: "พนักงานขายต่างประเทศ (O1)"
+										},
+										{
+											name: "กาญจนา\nเฮ้งหลี",
+											image: "/images/teams/lets-do-this/this-ganja.png",
+											role: "Sales Executive (O1)"
+										},
+										{
+											name: "ธนรัตน์\nรอดพาที",
+											image: "/images/teams/lets-do-this/this-tana.png",
+											role: "Sales Executive (O1)"
+										}
+									]
+								}
+							].map((team, teamIndex) => (
+								<div key={teamIndex} className="w-full flex-shrink-0">
+									<h4 className="text-lg text-center mb-6 px-4" style={{ color: team.color }}>
+										Team: {team.name}
+									</h4>
+									<div className="overflow-x-auto pb-4">
+										<div className="flex gap-4 pl-4 after:content-[''] after:pr-1">
+											{team.members.map((member, i) => (
+												<div key={i} className="flex-shrink-0 w-48">
+													<div className="relative rounded-2xl overflow-hidden bg-gradient-to-b from-[#2a2f3e] to-[#1a1f2e] border border-white/10">
+														<div className="aspect-[1/1] bg-gradient-to-b from-gray-600 to-gray-700 relative">
+															<Image
+																src={member.image}
+																alt={member.name.replace('\n', ' ')}
+																fill
+																className="object-cover"
+															/>
+															<div className="absolute inset-0 bg-gradient-to-t from-[#1a1f2e] via-transparent to-transparent opacity-60"></div>
+														</div>
+														<div className="p-4">
+															<h4 className="text-sm font-medium text-white mb-1 whitespace-pre-line">
+																{member.name}
+															</h4>
+															<p className="text-xs mb-2" style={{ color: team.color }}>Challenger</p>
+															<p className="text-gray-300 text-xs leading-relaxed">
+																{member.role}
+															</p>
+														</div>
+													</div>
+												</div>
+											))}
+										</div>
+									</div>
+								</div>
+							))}
 						</div>
 					</div>
 
-					{/* IT Consult - Section 5 */}
+					{/* Left Arrow Button */}
+					<button
+						onClick={() => setCurrentTeamIndex(currentTeamIndex > 0 ? currentTeamIndex - 1 : 11)}
+						className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 w-10 h-10 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-300 border border-white/20"
+					>
+						<svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+						</svg>
+					</button>
+
+					{/* Right Arrow Button */}
+					<button
+						onClick={() => setCurrentTeamIndex(currentTeamIndex < 11 ? currentTeamIndex + 1 : 0)}
+						className="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 w-10 h-10 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-300 border border-white/20"
+					>
+						<svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+						</svg>
+					</button>
+
+					{/* Team Counter */}
+					<div className="flex justify-center items-center gap-2 mt-8">
+						<span className="text-gray-400 text-sm">
+							{currentTeamIndex + 1} / 12
+						</span>
+					</div>
+				</div>
+
+				{/* IT Advisors Section Headers */}
+				<div className="px-4 md:px-5">
 					<h3 className="text-xl sm:text-2xl md:text-3xl text-center mb-8 md:mb-12 font-normal text-[#ffd54f]">
 						AI Advisors
 					</h3>
@@ -957,8 +1416,9 @@ export default function Home() {
 						IT Team
 					</h4>
 
-					<div className="flex justify-center mb-16 md:mb-20">
-						<div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6 max-w-8xl mx-auto">
+					{/* Desktop Grid View */}
+					<div className="hidden lg:flex justify-center mb-16 md:mb-20">
+						<div className="grid grid-cols-6 gap-4 md:gap-6 max-w-8xl">
 							{[
 								{
 									name: "น้องนก",
@@ -991,7 +1451,7 @@ export default function Home() {
 									role: "IT Security Officer (O2)"
 								}
 							].map((member, i) => (
-								<div key={i} className="group w-48 md:w-52">
+								<div key={i} className="group">
 									<div className="relative rounded-2xl overflow-hidden bg-gradient-to-b from-[#2a2f3e] to-[#1a1f2e] border border-white/10 transition-transform duration-300 hover:scale-105">
 										<div className="aspect-[1/1] bg-gradient-to-b from-gray-600 to-gray-700 relative">
 											<Image
@@ -1007,6 +1467,69 @@ export default function Home() {
 												{member.name}
 											</h4>
 											<p className="text-[#e91e63] text-xs md:text-lg mb-2">Advisor</p>
+											<p className="text-gray-300 text-xs leading-relaxed">
+												{member.role}
+											</p>
+										</div>
+									</div>
+								</div>
+							))}
+						</div>
+					</div>
+				</div>
+
+				{/* Mobile Horizontal Scroll View - IT Team */}
+				<div className="lg:hidden mb-16 md:mb-20">
+					<div className="overflow-x-auto pb-4">
+						<div className="flex gap-4 pl-4 after:content-[''] after:pr-1">
+							{[
+								{
+									name: "น้องนก",
+									image: "/images/teams/it-consult/ult-ganok.png",
+									role: "Product Trainer Specialist (O3)"
+								},
+								{
+									name: "น้องอร",
+									image: "/images/teams/it-consult/ult-ora.png",
+									role: "Project Manager (O1)"
+								},
+								{
+									name: "น้องโอ๊ต",
+									image: "/images/teams/it-consult/ult-wera.png",
+									role: "Network Engineer (O1)"
+								},
+								{
+									name: "น้องอาร์ม",
+									image: "/images/teams/it-consult/ult-rana.png",
+									role: "Document Designer (O1)"
+								},
+								{
+									name: "น้องต้อม",
+									image: "/images/teams/it-consult/ult-ratcha.png",
+									role: "ERP Specialist (O2)"
+								},
+								{
+									name: "น้องนิก",
+									image: "/images/teams/it-consult/ult-chidcha.png",
+									role: "IT Security Officer (O2)"
+								}
+							].map((member, i) => (
+								<div key={i} className="flex-shrink-0 w-48">
+									<div className="relative rounded-2xl overflow-hidden bg-gradient-to-b from-[#2a2f3e] to-[#1a1f2e] border border-white/10">
+										<div className="aspect-[1/1] bg-gradient-to-b from-gray-600 to-gray-700 relative">
+											<Image
+												src={member.image}
+												alt={member.name.replace('\n', ' ')}
+												fill
+												className="object-cover"
+											/>
+											<div className="absolute inset-0 bg-gradient-to-t from-[#1a1f2e] via-transparent to-transparent opacity-60"></div>
+										</div>
+										<div className="p-4">
+											<h4 className="text-sm font-medium text-white mb-1 whitespace-pre-line">
+												{member.name}
+											</h4>
+											<p className="text-[#e91e63] text-xs mb-2">Advisor</p>
 											<p className="text-gray-300 text-xs leading-relaxed">
 												{member.role}
 											</p>
