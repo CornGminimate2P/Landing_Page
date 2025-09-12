@@ -4,6 +4,7 @@ import { useState } from 'react'
 
 export default function Home() {
 	const [currentTeamIndex, setCurrentTeamIndex] = useState(0)
+	const [currentITTeamIndex, setCurrentITTeamIndex] = useState(0)
 
 	return (
 		<main className="min-h-screen bg-[#0a1628]">
@@ -561,7 +562,7 @@ export default function Home() {
 
 				{/* AI Challenger Teams Header */}
 				<div className="px-4 md:px-5">
-					<h3 className="text-xl sm:text-2xl md:text-3xl text-center mb-8 md:mb-12 font-normal text-[#ffd54f]">
+					<h3 className="text-xl sm:text-2xl md:text-3xl text-center mb-8 md:mb-6 font-normal text-[#ffd54f]">
 						AI Challenger Teams
 					</h3>
 				</div>
@@ -1378,166 +1379,230 @@ export default function Home() {
 						</div>
 					</div>
 
-					{/* Left Arrow Button */}
-					<button
-						onClick={() => setCurrentTeamIndex(currentTeamIndex > 0 ? currentTeamIndex - 1 : 11)}
-						className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 w-10 h-10 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-300 border border-white/20"
-					>
-						<svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-						</svg>
-					</button>
-
-					{/* Right Arrow Button */}
-					<button
-						onClick={() => setCurrentTeamIndex(currentTeamIndex < 11 ? currentTeamIndex + 1 : 0)}
-						className="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 w-10 h-10 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-300 border border-white/20"
-					>
-						<svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-						</svg>
-					</button>
-
-					{/* Team Counter */}
-					<div className="flex justify-center items-center gap-2 mt-8">
+					{/* Team Counter with Arrows - แสดงทั้ง Desktop และ Mobile */}
+					<div className="flex justify-center items-center gap-4">
+						<button
+							onClick={() => setCurrentTeamIndex(currentTeamIndex > 0 ? currentTeamIndex - 1 : 11)}
+							className="w-10 h-10 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-300 border border-white/20"
+						>
+							<svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+							</svg>
+						</button>
 						<span className="text-gray-400 text-sm">
 							{currentTeamIndex + 1} / 12
 						</span>
+						<button
+							onClick={() => setCurrentTeamIndex(currentTeamIndex < 11 ? currentTeamIndex + 1 : 0)}
+							className="w-10 h-10 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-300 border border-white/20"
+						>
+							<svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+							</svg>
+						</button>
 					</div>
 				</div>
 
 				{/* IT Advisors Section Headers */}
 				<div className="px-4 md:px-5">
-					<h3 className="text-xl sm:text-2xl md:text-3xl text-center mb-8 md:mb-12 font-normal text-[#ffd54f]">
+					<h3 className="text-xl sm:text-2xl md:text-3xl text-center mb-8 md:mb-6 font-normal text-[#ffd54f]">
 						AI Advisors
 					</h3>
 
 					<h4 className="text-lg md:text-xl text-center mb-6 text-[#e91e63]">
 						IT Team
 					</h4>
+				</div>
 
-					{/* Desktop Grid View */}
-					<div className="hidden lg:flex justify-center mb-16 md:mb-20">
-						<div className="grid grid-cols-6 gap-4 md:gap-6 max-w-8xl">
+				{/* IT Team Carousel Container */}
+				<div className="relative overflow-hidden mb-16 md:mb-20">
+					{/* Desktop View - Carousel with Grid Layout */}
+					<div className="hidden lg:block px-4 md:px-5">
+						<div
+							className="flex transition-transform duration-500 ease-in-out"
+							style={{ transform: `translateX(-${currentITTeamIndex * 100}%)` }}
+						>
 							{[
 								{
-									name: "น้องนก",
-									image: "/images/teams/it-consult/ult-ganok.png",
-									role: "Product Trainer Specialist (O3)"
+									members: [
+										{
+											name: "น้องนก",
+											image: "/images/teams/it-consult/ult-ganok.png",
+											role: "Product Trainer Specialist (O3)"
+										},
+										{
+											name: "น้องอร",
+											image: "/images/teams/it-consult/ult-ora.png",
+											role: "Project Manager (O1)"
+										},
+										{
+											name: "น้องโอ๊ต",
+											image: "/images/teams/it-consult/ult-wera.png",
+											role: "Network Engineer (O1)"
+										},
+										{
+											name: "น้องแคท",
+											image: "/images/teams/it-consult/ult-kat.png",
+											role: "Document Designer (O1)",
+										}
+									]
 								},
 								{
-									name: "น้องอร",
-									image: "/images/teams/it-consult/ult-ora.png",
-									role: "Project Manager (O1)"
-								},
-								{
-									name: "น้องโอ๊ต",
-									image: "/images/teams/it-consult/ult-wera.png",
-									role: "Network Engineer (O1)"
-								},
-								{
-									name: "น้องอาร์ม",
-									image: "/images/teams/it-consult/ult-rana.png",
-									role: "Document Designer (O1)"
-								},
-								{
-									name: "น้องต้อม",
-									image: "/images/teams/it-consult/ult-ratcha.png",
-									role: "ERP Specialist (O2)"
-								},
-								{
-									name: "น้องนิก",
-									image: "/images/teams/it-consult/ult-chidcha.png",
-									role: "IT Security Officer (O2)"
+									members: [
+										{
+											name: "น้องต้อม",
+											image: "/images/teams/it-consult/ult-ratcha.png",
+											role: "ERP Specialist (O2)"
+										},
+										{
+											name: "น้องนิก",
+											image: "/images/teams/it-consult/ult-chidcha.png",
+											role: "IT Security Officer (O2)"
+										},
+										{
+											name: "น้องอาร์ม",
+											image: "/images/teams/it-consult/ult-rana.png",
+											role: "Document Designer (O1)"
+										}
+									]
 								}
-							].map((member, i) => (
-								<div key={i} className="group">
-									<div className="relative rounded-2xl overflow-hidden bg-gradient-to-b from-[#2a2f3e] to-[#1a1f2e] border border-white/10 transition-transform duration-300 hover:scale-105">
-										<div className="aspect-[1/1] bg-gradient-to-b from-gray-600 to-gray-700 relative">
-											<Image
-												src={member.image}
-												alt={member.name.replace('\n', ' ')}
-												fill
-												className="object-cover"
-											/>
-											<div className="absolute inset-0 bg-gradient-to-t from-[#1a1f2e] via-transparent to-transparent opacity-60"></div>
-										</div>
-										<div className="p-4">
-											<h4 className="text-sm md:text-xl font-medium text-white mb-1 whitespace-pre-line">
-												{member.name}
-											</h4>
-											<p className="text-[#e91e63] text-xs md:text-lg mb-2">Advisor</p>
-											<p className="text-gray-300 text-xs leading-relaxed">
-												{member.role}
-											</p>
+							].map((group, groupIndex) => (
+								<div key={groupIndex} className="w-full flex-shrink-0">
+									<div className="flex justify-center">
+										<div className={`grid ${group.members.length === 4 ? 'grid-cols-4' : 'grid-cols-3'} gap-4 md:gap-6 max-w-6xl mx-auto`}>
+											{group.members.map((member, i) => (
+												<div key={i} className="group w-48 md:w-52">
+													<div className={`relative rounded-2xl overflow-hidden bg-gradient-to-b from-[#2a2f3e] to-[#1a1f2e] border border-white/10 transition-transform duration-300`}>
+														<div className="aspect-[1/1] bg-gradient-to-b from-gray-600 to-gray-700 relative">
+															<Image
+																src={member.image}
+																alt={member.name}
+																fill
+																className="object-cover"
+															/>
+															<div className="absolute inset-0 bg-gradient-to-t from-[#1a1f2e] via-transparent to-transparent opacity-60"></div>
+														</div>
+														<div className="p-4">
+															<h4 className="text-sm md:text-xl font-medium text-white mb-1">
+																{member.name}
+															</h4>
+															<p className="text-[#e91e63] text-xs md:text-lg mb-2">Advisor</p>
+															<p className="text-gray-300 text-xs leading-relaxed">
+																{member.role}
+															</p>
+														</div>
+													</div>
+												</div>
+											))}
 										</div>
 									</div>
 								</div>
 							))}
 						</div>
 					</div>
-				</div>
 
-				{/* Mobile Horizontal Scroll View - IT Team */}
-				<div className="lg:hidden mb-16 md:mb-20">
-					<div className="overflow-x-auto pb-4">
-						<div className="flex gap-4 pl-4 after:content-[''] after:pr-1">
+					{/* Mobile View - Carousel with Horizontal Scroll */}
+					<div className="lg:hidden">
+						<div
+							className="flex transition-transform duration-500 ease-in-out"
+							style={{ transform: `translateX(-${currentITTeamIndex * 100}%)` }}
+						>
 							{[
 								{
-									name: "น้องนก",
-									image: "/images/teams/it-consult/ult-ganok.png",
-									role: "Product Trainer Specialist (O3)"
-								},
-								{
-									name: "น้องอร",
-									image: "/images/teams/it-consult/ult-ora.png",
-									role: "Project Manager (O1)"
-								},
-								{
-									name: "น้องโอ๊ต",
-									image: "/images/teams/it-consult/ult-wera.png",
-									role: "Network Engineer (O1)"
-								},
-								{
-									name: "น้องอาร์ม",
-									image: "/images/teams/it-consult/ult-rana.png",
-									role: "Document Designer (O1)"
-								},
-								{
-									name: "น้องต้อม",
-									image: "/images/teams/it-consult/ult-ratcha.png",
-									role: "ERP Specialist (O2)"
-								},
-								{
-									name: "น้องนิก",
-									image: "/images/teams/it-consult/ult-chidcha.png",
-									role: "IT Security Officer (O2)"
+									members: [
+										{
+											name: "น้องนก",
+											image: "/images/teams/it-consult/ult-ganok.png",
+											role: "Product Trainer Specialist (O3)"
+										},
+										{
+											name: "น้องอร",
+											image: "/images/teams/it-consult/ult-ora.png",
+											role: "Project Manager (O1)"
+										},
+										{
+											name: "น้องโอ๊ต",
+											image: "/images/teams/it-consult/ult-wera.png",
+											role: "Network Engineer (O1)"
+										},
+										{
+											name: "น้องแคท",
+											image: "/images/teams/it-consult/ult-kat.png",
+											role: "Document Designer (O1)",
+										},
+										{
+											name: "น้องต้อม",
+											image: "/images/teams/it-consult/ult-ratcha.png",
+											role: "ERP Specialist (O2)"
+										},
+										{
+											name: "น้องนิก",
+											image: "/images/teams/it-consult/ult-chidcha.png",
+											role: "IT Security Officer (O2)"
+										},
+										{
+											name: "น้องอาร์ม",
+											image: "/images/teams/it-consult/ult-rana.png",
+											role: "Document Designer (O1)"
+										},
+									]
 								}
-							].map((member, i) => (
-								<div key={i} className="flex-shrink-0 w-48">
-									<div className="relative rounded-2xl overflow-hidden bg-gradient-to-b from-[#2a2f3e] to-[#1a1f2e] border border-white/10">
-										<div className="aspect-[1/1] bg-gradient-to-b from-gray-600 to-gray-700 relative">
-											<Image
-												src={member.image}
-												alt={member.name.replace('\n', ' ')}
-												fill
-												className="object-cover"
-											/>
-											<div className="absolute inset-0 bg-gradient-to-t from-[#1a1f2e] via-transparent to-transparent opacity-60"></div>
-										</div>
-										<div className="p-4">
-											<h4 className="text-sm font-medium text-white mb-1 whitespace-pre-line">
-												{member.name}
-											</h4>
-											<p className="text-[#e91e63] text-xs mb-2">Advisor</p>
-											<p className="text-gray-300 text-xs leading-relaxed">
-												{member.role}
-											</p>
+							].map((group, groupIndex) => (
+								<div key={groupIndex} className="w-full flex-shrink-0">
+									<div className="overflow-x-auto pb-4">
+										<div className="flex gap-4 pl-4 after:content-[''] after:pr-1">
+											{group.members.map((member, i) => (
+												<div key={i} className="flex-shrink-0 w-48">
+													<div className="relative rounded-2xl overflow-hidden bg-gradient-to-b from-[#2a2f3e] to-[#1a1f2e] border border-white/10">
+														<div className="aspect-[1/1] bg-gradient-to-b from-gray-600 to-gray-700 relative">
+															<Image
+																src={member.image}
+																alt={member.name}
+																fill
+																className="object-cover"
+															/>
+															<div className="absolute inset-0 bg-gradient-to-t from-[#1a1f2e] via-transparent to-transparent opacity-60"></div>
+														</div>
+														<div className="p-4">
+															<h4 className="text-sm font-medium text-white mb-1">
+																{member.name}
+															</h4>
+															<p className="text-[#e91e63] text-xs mb-2">Advisor</p>
+															<p className="text-gray-300 text-xs leading-relaxed">
+																{member.role}
+															</p>
+														</div>
+													</div>
+												</div>
+											))}
 										</div>
 									</div>
 								</div>
 							))}
 						</div>
+					</div>
+
+					{/* Team Counter with Arrows - Desktop Only */}
+					<div className="hidden lg:flex justify-center items-center gap-4 mt-8">
+						<button
+							onClick={() => setCurrentITTeamIndex(currentITTeamIndex > 0 ? currentITTeamIndex - 1 : 1)}
+							className="w-10 h-10 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-300 border border-white/20"
+						>
+							<svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+							</svg>
+						</button>
+						<span className="text-gray-400 text-sm">
+							{currentITTeamIndex + 1} / 2
+						</span>
+						<button
+							onClick={() => setCurrentITTeamIndex(currentITTeamIndex < 1 ? currentITTeamIndex + 1 : 0)}
+							className="w-10 h-10 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-300 border border-white/20"
+						>
+							<svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+							</svg>
+						</button>
 					</div>
 				</div>
 			</section>
