@@ -292,7 +292,7 @@ export default function Home() {
 						<div className="p-6 md:p-8 rounded-2xl backdrop-blur-md bg-white/5 border border-white/10">
 							<div className="w-10 h-10 md:w-12 md:h-12 rounded-full mb-4 bg-gradient-to-br from-[#66bb6a] to-[#43a047]"></div>
 							<h3 className="text-xl md:text-2xl text-white mb-2">ความถี่ (Frequency)</h3>
-							<p className="text-sm md:text-base text-gray-300">ยิ่งน้อย ยิ่งเหมาะให้ AI ช่วย</p>
+							<p className="text-sm md:text-base text-gray-300">ยิ่งบ่อย ยิ่งเหมาะให้ AI ช่วย</p>
 							<div className="mt-4 p-4 rounded-lg bg-white/5">
 								<div className="flex justify-between mb-2">
 									<span className="text-[#66bb6a] text-sm">Craft</span>
