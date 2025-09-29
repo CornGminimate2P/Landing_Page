@@ -671,7 +671,7 @@ export default function Home() {
 								{
 									name: "Silent Storm",
 									color: "#81c784",
-									layout: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center",
+									layout: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 justify-items-center",
 									cardWidth: "w-48 md:w-52",
 									gap: "gap-4 md:gap-6",
 									members: [
@@ -694,13 +694,23 @@ export default function Home() {
 											name: "ฆนาการ\nสังคะบุตร",
 											image: "/images/teams/silent-storm/storm-kana.png",
 											role: "Automation Engineer (O1)"
+										},
+										{
+											name: "ศรัณย์\nแจ่มเจ็ดริ้ว",
+											image: "/images/teams/silent-storm/storm-saran.png",
+											role: "OEE Improvement (O1)"
+										},
+										{
+											name: "เสาวลักษณ์\nพิกุลไทย",
+											image: "/images/teams/silent-storm/storm-saowa.png",
+											role: "Senior Project Management (O2)"
 										}
 									]
 								},
 								{
 									name: "AI-SHENG",
 									color: "#ffb74d",
-									layout: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center",
+									layout: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 justify-items-center",
 									cardWidth: "w-48 md:w-52",
 									gap: "gap-4 md:gap-6",
 									members: [
@@ -718,6 +728,16 @@ export default function Home() {
 											name: "สุรสีห์\nเพิ่มนาม",
 											image: "/images/teams/ai-sheng/sheng-sura.png",
 											role: "หัวหน้าส่วนงานระบบ (M1)"
+										},
+										{
+											name: "มลฤดี\nโยธะการี",
+											image: "/images/teams/ai-sheng/sheng-mol.png",
+											role: "หัวหน้าแผนกความปลอดภัยและอาชีวอนามัย (O3)"
+										},
+										{
+											name: "ณัฐธิดา\nวงค์สาสนธ์",
+											image: "/images/teams/ai-sheng/sheng-nutthi.png",
+											role: "เจ้าหน้าที่ความปลอดภัยวิชาชีพ และสิ่งแวดล้อม (O1)"
 										}
 									]
 								},
@@ -1105,6 +1125,16 @@ export default function Home() {
 											name: "ฆนาการ\nสังคะบุตร",
 											image: "/images/teams/silent-storm/storm-kana.png",
 											role: "Automation Engineer (O1)"
+										},
+										{
+											name: "ศรัณย์\nแจ่มเจ็ดริ้ว",
+											image: "/images/teams/silent-storm/storm-saran.png",
+											role: "OEE Improvement (O1)"
+										},
+										{
+											name: "เสาวลักษณ์\nพิกุลไทย",
+											image: "/images/teams/silent-storm/storm-saowa.png",
+											role: "Senior Project Management (O2)"
 										}
 									]
 								},
@@ -1126,6 +1156,16 @@ export default function Home() {
 											name: "สุรสีห์\nเพิ่มนาม",
 											image: "/images/teams/ai-sheng/sheng-sura.png",
 											role: "หัวหน้าส่วนงานระบบ (M1)"
+										},
+										{
+											name: "มลฤดี\nโยธะการี",
+											image: "/images/teams/ai-sheng/sheng-mol.png",
+											role: "หัวหน้าแผนกความปลอดภัยและอาชีวอนามัย (O3)"
+										},
+										{
+											name: "ณัฐธิดา\nวงค์สาสนธ์",
+											image: "/images/teams/ai-sheng/sheng-nutthi.png",
+											role: "เจ้าหน้าที่ความปลอดภัยวิชาชีพ และสิ่งแวดล้อม (O1)"
 										}
 									]
 								},
