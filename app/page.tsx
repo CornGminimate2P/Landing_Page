@@ -25,14 +25,14 @@ export default function Home() {
 
 				{/* Left Person Image - Mobile Hidden */}
 				<div
-					className="hidden lg:block absolute bottom-0 h-[45vh] z-30"
+					className="hidden lg:block absolute bottom-0 h-[51vh] z-30"
 					style={{
 						left: '50%',
-						transform: 'translateX(-50%) translateX(-530px)'
+						transform: 'translateX(-50%) translateX(-590px)'
 					}}
 				>
 					<Image
-						src="/suthee.png"
+						src="/Supant.png"
 						alt="Suthee Mongkolsuthee"
 						width={400}
 						height={600}
