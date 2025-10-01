@@ -455,14 +455,14 @@ export default function Home() {
 									role: "ที่ปรึกษา (M3)"
 								},
 								{
-									name: "อาคเนย์\nเกตุกลิ่นแก้ว",
-									image: "/images/mentors/mentor-arkveld.png",
-									role: "ผู้จัดการฝ่ายเทคโนโลยีสารสนเทศ (M3)"
-								},
-								{
 									name: "บุญเปรม\nสุขกสี",
 									image: "/images/mentors/mentor-bunprem.png",
 									role: "ผู้จัดการฝ่ายผลิต (M3)"
+								},
+								{
+									name: "เขมจิรา\nเจริญทรง",
+									image: "/images/mentors/mentor-khemji.png",
+									role: "ผู้จัดการฝ่ายจัดซื้อ (M3)"
 								},
 								{
 									name: "ธารทิพย์\nศรีงามผ่อง",
