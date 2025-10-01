@@ -445,7 +445,7 @@ export default function Home() {
 									role: "ผู้จัดการฝ่ายบริหารคลังสินค้าและจัดส่ง (M3)"
 								},
 								{
-									name: "สมเกียรติ\nสุกัญจนศิร",
+									name: "สมเกียรติ\nสุกัญจนศิริ",
 									image: "/images/mentors/mentor-somkiat.png",
 									role: "ผู้จัดการฝ่ายสำนักงาน (M3)"
 								},
