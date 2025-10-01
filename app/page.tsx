@@ -431,6 +431,40 @@ export default function Home() {
 						Team Participants
 					</h2>
 
+					{/* Master Mentor Section */}
+					<h3 className="text-xl sm:text-2xl md:text-3xl text-center mb-8 md:mb-12 font-normal text-[#ffd54f]">
+						Master Mentor
+					</h3>
+
+					{/* Master Mentor Card - Centered */}
+					<div className="flex justify-center mb-16 md:mb-20">
+						<div className="group">
+							<div className="relative rounded-2xl overflow-hidden bg-gradient-to-b from-[#2a2f3e] to-[#1a1f2e] border border-white/10 transition-transform duration-300 hover:scale-105">
+								<div className="aspect-[1/1] bg-gradient-to-b from-gray-600 to-gray-700 relative">
+									<Image
+										src="/images/mentors/mentor-arkveld.png"
+										alt="Arkveld"
+										fill
+										className="object-cover"
+									/>
+									<div className="absolute inset-0 bg-gradient-to-t from-[#1a1f2e] via-transparent to-transparent opacity-60"></div>
+								</div>
+								<div className="p-4">
+									<h2 className="text-sm md:text-xl font-medium text-white mb-1">
+										อาคเนย์
+									</h2>
+									<h2 className="text-sm md:text-xl font-medium text-white mb-1">
+										เกตุกลิ่นแก้ว
+									</h2>
+									<p className="text-[#e91e63] text-xs md:text-lg mb-2">Master Mentor</p>
+									<p className="text-gray-300 text-xs leading-relaxed">
+										ผู้จัดการฝ่ายเทคโนโลยีสารสนเทศ (M3)
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
 					<h3 className="text-xl sm:text-2xl md:text-3xl text-center mb-8 md:mb-12 font-normal text-[#ffd54f]">
 						Mentors
 					</h3>
@@ -1455,7 +1489,7 @@ export default function Home() {
 				</div>
 
 				{/* IT Team Carousel Container */}
-				<div className="relative overflow-hidden mb-16 md:mb-20">
+				<div className="relative mb-16 md:mb-20">
 					{/* Desktop View - Carousel with Grid Layout */}
 					<div className="hidden lg:block px-4 md:px-5">
 						<div
@@ -1512,7 +1546,7 @@ export default function Home() {
 										<div className={`grid ${group.members.length === 4 ? 'grid-cols-4' : 'grid-cols-3'} gap-4 md:gap-6 max-w-6xl mx-auto`}>
 											{group.members.map((member, i) => (
 												<div key={i} className="group w-48 md:w-52">
-													<div className={`relative rounded-2xl overflow-hidden bg-gradient-to-b from-[#2a2f3e] to-[#1a1f2e] border border-white/10 transition-transform duration-300`}>
+													<div className={`relative rounded-2xl overflow-hidden bg-gradient-to-b from-[#2a2f3e] to-[#1a1f2e] border border-white/10 transition-transform duration-300 hover:scale-105`}>
 														<div className="aspect-[1/1] bg-gradient-to-b from-gray-600 to-gray-700 relative">
 															<Image
 																src={member.image}
@@ -1593,7 +1627,7 @@ export default function Home() {
 										<div className="flex gap-4 pl-4 after:content-[''] after:pr-1">
 											{group.members.map((member, i) => (
 												<div key={i} className="flex-shrink-0 w-48">
-													<div className="relative rounded-2xl overflow-hidden bg-gradient-to-b from-[#2a2f3e] to-[#1a1f2e] border border-white/10">
+													<div className="relative rounded-2xl overflow-hidden bg-gradient-to-b from-[#2a2f3e] to-[#1a1f2e] border border-white/10 transition-transform duration-300 hover:scale-105">
 														<div className="aspect-[1/1] bg-gradient-to-b from-gray-600 to-gray-700 relative">
 															<Image
 																src={member.image}
