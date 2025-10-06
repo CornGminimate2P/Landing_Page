@@ -22,9 +22,9 @@ export default function Navbar() {
 		<nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-[#0a1628]/95 to-[#1a237e]/95 backdrop-blur-md border-b border-white/10">
 			<div className="max-w-6xl mx-auto px-5 py-4">
 				{/* Desktop and Mobile Header */}
-				<div className="flex items-center justify-center">
+				<div className="flex items-center">
 					{/* Desktop Navigation */}
-					<div className="hidden md:flex items-center gap-8">
+					<div className="hidden md:flex items-center gap-8 justify-center flex-1">
 						{navItems.map((item) => (
 							item.name === 'HOME' ? (
 								<Link
@@ -52,11 +52,6 @@ export default function Navbar() {
 						))}
 					</div>
 
-					{/* Mobile Logo/Home */}
-					<Link href="/" className="md:hidden text-white font-light text-sm tracking-wider">
-						HOME
-					</Link>
-
 					{/* Hamburger Menu Button */}
 					<button
 						onClick={toggleMenu}
@@ -80,7 +75,7 @@ export default function Navbar() {
 					isMenuOpen ? 'max-h-64 opacity-100 mt-4' : 'max-h-0 opacity-0'
 				}`}>
 					<div className="flex flex-col space-y-3 pb-2">
-						{navItems.filter(item => item.name !== 'HOME').map((item) => (
+						{navItems.map((item) => (
 							<Link
 								key={item.name}
 								href={item.href}
