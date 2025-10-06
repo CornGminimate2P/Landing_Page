@@ -22,7 +22,7 @@ export default function Navbar() {
 		<nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-[#0a1628]/95 to-[#1a237e]/95 backdrop-blur-md border-b border-white/10">
 			<div className="max-w-6xl mx-auto px-5 py-4">
 				{/* Desktop and Mobile Header */}
-				<div className="flex items-center justify-between">
+				<div className="flex items-center justify-center">
 					{/* Desktop Navigation */}
 					<div className="hidden md:flex items-center gap-8">
 						{navItems.map((item) => (

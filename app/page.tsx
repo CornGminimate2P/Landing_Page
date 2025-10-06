@@ -7,7 +7,7 @@ export default function Home() {
 	const [currentITTeamIndex, setCurrentITTeamIndex] = useState(0)
 
 	return (
-		<main className="min-h-screen bg-[#0a1628]">
+		<main className="min-h-screen overflow-x-hidden bg-[#0a1628]">
 			{/* Hero Section with Satya Quote */}
 			<section
 				className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16 md:pt-20"
